@@ -223,3 +223,32 @@ flex-direction:column;
 gap:15px;
 }
 }
+.about-content{
+    max-width:900px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.about-content p{
+    font-size:17px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:20px;
+}
+
+.about-content blockquote{
+    margin:35px auto;
+    padding:20px;
+    max-width:700px;
+    border-left:5px solid #28a745;
+    background:#f8f9fa;
+    font-size:20px;
+    font-style:italic;
+    color:#333;
+}
+
+.why-title{
+    text-align:center;
+    margin:50px 0 30px;
+    color:#003366;
+}

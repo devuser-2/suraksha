@@ -12,10 +12,12 @@
 <body>
 
 <header>
-<div class="container nav">
+<div class="container nav" >
 
 <div class="logo">
-<img src="images/logo.jpg" alt="Shashwat InsureTech">
+
+<img src="images\suraksha logo July-2-2026.jpeg" alt="Shashwat InsureTech">
+
 </div>
 
 <nav>
@@ -38,6 +40,8 @@
 
 <div class="hero-left">
 
+<p class="hero-badge">Trusted Insurance Guidance for Every Family</p>
+
 <h1>
 Aapki Zindagi,<br>
 <span>Hamari Zimmedari</span>
@@ -57,9 +61,10 @@ WhatsApp
 
 </div>
 
-<!-- <div class="hero-right">
-<img src="images/banner.jpg" alt="Insurance Banner">
-</div> -->
+<div class="hero-right">
+  <img src="images/slide1.png" alt="Insurance Banner">
+  
+</div>
 
 </section>
 
@@ -97,13 +102,27 @@ WhatsApp
 
 <h3>Health Insurance</h3>
 
-<ul>
-<li>Cashless Hospitalization</li>
-<li>Family Floater Plans</li>
-<li>Critical Illness Cover</li>
-<li>Tax Benefits u/s 80D</li>
-<li>Maternity Benefits</li>
-
+<ul class="benefits-list">
+  <li>
+    <img src="images/cashless_hospitalization.png" alt="Cashless hospitalization icon">
+    <span>Cashless Hospitalization</span>
+  </li>
+  <li>
+    <img src="images/family_floater_plans.png" alt="Family floater plans icon">
+    <span>Family Floater Plans</span>
+  </li>
+  <li>
+    <img src="images/critical_illness_cover.png" alt="Critical illness cover icon">
+    <span>Critical Illness Cover</span>
+  </li>
+  <li>
+    <img src="images/tax_benefits_80d.png" alt="Tax benefits icon">
+    <span>Tax Benefits u/s 80D</span>
+  </li>
+  <li>
+    <img src="images/maternity_benefits.png" alt="Maternity benefits icon">
+    <span>Maternity Benefits</span>
+  </li>
 </ul>
 
 </div>
@@ -112,13 +131,27 @@ WhatsApp
 
 <h3>Motor Insurance</h3>
 
-<ul>
-<li>Car Insurance</li>
-<li>Bike Insurance</li>
-<li>Zero Depreciation Cover</li>
-<li>Roadside Assistance</li>
-<li>Fast Claim Settlement</li>
-
+<ul class="benefits-list">
+  <li>
+    <img src="images/car_insurance.png" alt="Car insurance icon">
+    <span>Car Insurance</span>
+  </li>
+  <li>
+    <img src="images/bike_insurance.png" alt="Bike insurance icon">
+    <span>Bike Insurance</span>
+  </li>
+  <li>
+    <img src="images/zero_depreciation_cover.png" alt="Zero depreciation cover icon">
+    <span>Zero Depreciation Cover</span>
+  </li>
+  <li>
+    <img src="images/roadside_assistance.png" alt="Roadside assistance icon">
+    <span>Roadside Assistance</span>
+  </li>
+  <li>
+    <img src="images/fast_claim_settlement.png" alt="Fast claim settlement icon">
+    <span>Fast Claim Settlement</span>
+  </li>
 </ul>
 
 </div>
@@ -126,10 +159,6 @@ WhatsApp
 </div>
 
 </section>
-
-<section class="why-us" id="about">
-
-<h2>Why Choose Shashwat InsureTech?</h2>
 
 <section class="why-us" id="about">
 
@@ -161,8 +190,8 @@ WhatsApp
             looking for ways to create meaningful value for people and businesses.
         </p>
 
-        <blockquote>
-            "Success isn't measured by policies sold, but by the peace of mind we provide."
+        <blockquote class="dynamic-quote">
+            <span class="quote-text">"Success isn't measured by policies sold, but by the peace of mind we provide."</span>
         </blockquote>
 
     </div>
@@ -195,8 +224,6 @@ WhatsApp
 
 </section>
 
-</section>
-
 <section class="contact-section" id="contact">
 
 <h2>Contact Us</h2>
@@ -221,20 +248,43 @@ WhatsApp
             <option>Vehicle Insurance</option>
         </select><br><br>
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Submit</span>
+        </button>
 
     </form>
 </div>
 
-<div class="contact-box">
-<h3>Address</h3>
-<p>
-9/1, 3rd Floor,<br>
-Saldoddi Gate,<br>
-Near The Art Of Living International Center,<br>
-Kanakapura Road,<br>
-Bengaluru - 560082
-</p>
+<div class="contact-box address-box">
+  <h3>Address</h3>
+  <address id="company-address">
+    9/1, 3rd Floor,<br>
+    Saldoddi Gate,<br>
+    Near The Art Of Living International Center,<br>
+    Kanakapura Road,<br>
+    Bengaluru - 560082
+  </address>
+
+    <div class="address-actions">
+    <button id="copy-address" type="button" class="btn outline" aria-label="Copy address">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="9" y="9" width="9" height="11" rx="2" stroke="#0a2f7a" stroke-width="1.5"></rect>
+        <rect x="4" y="4" width="11" height="11" rx="2" stroke="#0a2f7a" stroke-width="1.5"></rect>
+      </svg>
+      <span class="action-text">Copy Address</span>
+    </button>
+    <a href="https://www.google.com/maps/search/?api=1&query=9/1,+Saldoddi+Gate,+Kanakapura+Road,+Bengaluru" target="_blank" class="btn outline" aria-label="View on map">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M21 10c0 6-9 11-9 11s-9-5-9-11a9 9 0 1118 0z" stroke="#0a2f7a" stroke-width="1.5" fill="none"/>
+        <circle cx="12" cy="10" r="2" fill="#0a2f7a"/>
+      </svg>
+      <span>View on Map</span>
+    </a>
+  </div>
 </div>
 
 </div>

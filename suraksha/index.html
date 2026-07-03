@@ -62,34 +62,40 @@ WhatsApp
 </div>
 
 <div class="hero-right">
-  <img src="images/slide1.png" alt="Insurance Banner">
+  <img src="images/Famili-image.png" alt="Family Insurance">
   
 </div>
 
 </section>
 
-<section class="features">
-
-<div class="feature">
-<h3>Trusted Advisor</h3>
-<p>Professional guidance for every policy.</p>
-</div>
-
-<div class="feature">
-<h3>Best Coverage</h3>
-<p>Affordable and comprehensive protection.</p>
-</div>
-
-<div class="feature">
-<h3>Quick Claims</h3>
-<p>Fast and smooth claim support.</p>
-</div>
-
-<div class="feature">
-<h3>24x7 Support</h3>
-<p>Always available for assistance.</p>
-</div>
-
+<section class="trust-section">
+  <div class="trust-grid">
+    <div class="trust-card">
+      <span>⭐</span>
+      <h3>100+ Happy Customers</h3>
+      <p>Trusted by families and individuals for fast, transparent support.</p>
+    </div>
+    <div class="trust-card">
+      <span>⭐</span>
+      <h3>Claim Assistance Support</h3>
+      <p>Guidance through every step of the claim process.</p>
+    </div>
+    <div class="trust-card">
+      <span>⭐</span>
+      <h3>IRDAI Registered Partner</h3>
+      <p>Regulated and authorized insurance advisory services.</p>
+    </div>
+    <div class="trust-card">
+      <span>⭐</span>
+      <h3>Policies from Top Insurance Companies</h3>
+      <p>Access best-in-class plans from leading insurers.</p>
+    </div>
+    <div class="trust-card">
+      <span>⭐</span>
+      <h3>24×7 Customer Support</h3>
+      <p>Help is always available whenever you need it.</p>
+    </div>
+  </div>
 </section>
 
 <section class="services" id="services">
@@ -233,30 +239,43 @@ WhatsApp
 <div class="contact-box">
     <h3>Get a Free Quote</h3>
 
-    <form action="YOUR_GOOGLE_FORM_URL" method="POST" target="_blank">
+    <form action="submit.php" method="POST">
 
-        <label>Name</label><br>
-        <input type="text" name="entry.XXXXXXXXXX" placeholder="Enter your name" required><br><br>
+    <label>Name</label><br>
+    <input type="text" name="name" placeholder="Enter your name" required><br><br>
 
-        <label>Mobile No.</label><br>
-        <input type="tel" name="entry.YYYYYYYYYY" placeholder="Enter mobile number" required><br><br>
+    <label>Mobile No.</label><br>
+    <input type="tel" name="mobile_no" placeholder="Enter mobile number" required><br><br>
 
-        <label>Insurance Required</label><br>
-        <select name="entry.ZZZZZZZZZZ" required>
-            <option value="">Select</option>
-            <option>Health Insurance</option>
-            <option>Vehicle Insurance</option>
-        </select><br><br>
+    <label>Insurance Required</label><br>
+    <select name="insurance_required" required>
+        <option value="">Select</option>
+        <option value="Health Insurance">Health Insurance</option>
+        <option value="Vehicle Insurance">Vehicle Insurance</option>
+    </select><br><br>
 
-        <button type="submit" class="btn primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span>Submit</span>
-        </button>
+    <label>Vehicle Number (for renewals)</label><br>
+    <input type="text" name="vehicle_number" placeholder="Enter vehicle number"><br><br>
 
-    </form>
+    <label>Preferred Time to Call</label><br>
+    <select name="preferred_time_to_call" required>
+        <option value="">Select preferred time</option>
+        <option value="Any time (24 hours)">Any time (24 hours)</option>
+        <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+        <option value="Afternoon (12 PM - 3 PM)">Afternoon (12 PM - 3 PM)</option>
+        <option value="Evening (3 PM - 6 PM)">Evening (3 PM - 6 PM)</option>
+        <option value="After 6 PM">After 6 PM</option>
+    </select><br><br>
+
+    <button type="submit" class="btn primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Submit</span>
+    </button>
+
+</form>
 </div>
 
 <div class="contact-box address-box">

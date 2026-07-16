@@ -247,15 +247,28 @@ WhatsApp
     <input type="tel" name="mobile_no" placeholder="Enter mobile number" required><br><br>
 
     <label>Insurance Type</label><br>
-    <select name="insurance_required" required>
-        <option value="">Select</option>
-        <option value="Health Insurance">Health Insurance</option>
-        <option value="Vehicle Insurance">Vehicle Insurance</option>
-    </select><br><br>
 
+<select name="insurance_type" id="insuranceType" onchange="toggleFields()" required>
+    <option value="">Select</option>
+    <option value="health">Health Insurance</option>
+    <option value="vehicle">Vehicle Insurance</option>
+</select>
+
+<br><br>
+
+<!-- Health Insurance -->
+<div id="healthFields" style="display:none;">
+    <label>Health Details</label><br>
+    <input type="text" name="health_details" placeholder="Enter health details">
+    <br><br>
+</div>
+
+<!-- Vehicle Insurance -->
+<div id="vehicleFields" style="display:none;">
     <label>Vehicle Number (for renewals)</label><br>
-    <input type="text" name="vehicle_number" placeholder="Enter vehicle number"><br><br>
-
+    <input type="text" name="vehicle_number" placeholder="Enter vehicle number">
+    <br><br>
+</div>
     <label>Preferred Time to Call</label><br>
     <select name="preferred_time_to_call">
         <option value="">Select preferred time (Optional)</option>

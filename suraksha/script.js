@@ -63,5 +63,18 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 });
+function toggleFields() {
+    const type = document.getElementById("insuranceType").value;
 
+    const health = document.getElementById("healthFields");
+    const vehicle = document.getElementById("vehicleFields");
 
+    health.style.display = "none";
+    vehicle.style.display = "none";
+
+    if (type === "health") {
+        health.style.display = "block";
+    } else if (type === "vehicle") {
+        vehicle.style.display = "block";
+    }
+}

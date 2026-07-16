@@ -162,9 +162,21 @@ background:#eef4ff;
 }
 
 .trust-grid{
-display:grid;
-grid-template-columns:repeat(5, minmax(180px, 1fr));
-gap:18px;
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:18px;
+}
+
+@media (max-width:768px){
+    .trust-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:480px){
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 .trust-card{

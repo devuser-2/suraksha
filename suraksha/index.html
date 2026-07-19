@@ -241,51 +241,50 @@ WhatsApp
 <form action="submit.php" method="POST">
 
     <label>Name</label>
-    <input type="text" name="name" placeholder="Enter your name" required><br><br>
+<input type="text" name="name" placeholder="Enter your name" required><br><br>
 
-    <label>Mobile No.</label>
-    <input type="tel" name="mobile_no" placeholder="Enter mobile number" required><br><br>
+<label>Mobile No.</label>
+<input type="tel" name="mobile_no" placeholder="Enter mobile number" required><br><br>
 
-    <label>Insurance Type</label>
-
-<select name="insurance_type" id="insuranceType" onchange="toggleFields()" required>
+<label>Insurance Type</label><br>
+<select name="insurance_type" id="insuranceType" required>
     <option value="">Select</option>
-    <option value="health">Health Insurance</option>
-    <option value="vehicle">Vehicle Insurance</option>
+    <option value="Health Insurance">Health Insurance</option>
+    <option value="Vehicle Insurance">Vehicle Insurance</option>
 </select>
-
 <br><br>
 
-<!-- Health Insurance -->
+<!-- Health Insurance Fields -->
 <div id="healthFields" style="display:none;">
-    <label>Health Details</label>
-    <input type="text" name="health_details" placeholder="Enter health details">
+    <label>Gender</label>
+    <select name="gender" id="gender">
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
+    <br><br>
+
+    <label>Age</label>
+    <input type="number" name="age" id="age" placeholder="Enter your age" min="1" max="120">
     <br><br>
 </div>
 
-<!-- Vehicle Insurance -->
+<!-- Vehicle Insurance Fields -->
 <div id="vehicleFields" style="display:none;">
     <label>Vehicle Number (for renewals)</label>
-    <input type="text" name="vehicle_number" placeholder="Enter vehicle number">
+    <input type="text" name="vehicle_number" id="vehicle_number" placeholder="Enter vehicle number">
     <br><br>
 </div>
-    <label>Preferred Time to Call</label>
-    <select name="preferred_time_to_call">
-        <option value="">Select preferred time (Optional)</option>
-        <option value="Any time (24 hours)">Any time (24 hours)</option>
-        <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
-        <option value="Afternoon (12 PM - 3 PM)">Afternoon (12 PM - 3 PM)</option>
-        <option value="Evening (3 PM - 6 PM)">Evening (3 PM - 6 PM)</option>
-        <option value="After 6 PM">After 6 PM</option>
-    </select><br><br>
 
-    <button type="submit" class="btn primary">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span>Submit</span>
-    </button>
+<button type="submit" class="btn primary">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <span>Submit</span>
+</button>
 
 </form>
 </div>
@@ -345,7 +344,7 @@ WhatsApp
 
 </body>
 </html>
-<script>
+<!-- <script>
 function toggleFields() {
     const type = document.getElementById("insuranceType").value;
 
@@ -361,4 +360,40 @@ function toggleFields() {
         vehicle.style.display = "block";
     }
 }
+</script> -->
+<script>
+const insuranceType = document.getElementById("insuranceType");
+const healthFields = document.getElementById("healthFields");
+const vehicleFields = document.getElementById("vehicleFields");
+
+const gender = document.getElementById("gender");
+const age = document.getElementById("age");
+const vehicleNumber = document.getElementById("vehicle_number");
+
+insuranceType.addEventListener("change", function () {
+    if (this.value === "Health Insurance") {
+        healthFields.style.display = "block";
+        vehicleFields.style.display = "none";
+
+        gender.required = true;
+        age.required = true;
+        vehicleNumber.required = false;
+    } 
+    else if (this.value === "Vehicle Insurance") {
+        healthFields.style.display = "none";
+        vehicleFields.style.display = "block";
+
+        gender.required = false;
+        age.required = false;
+        vehicleNumber.required = false; // Change to true if you want it mandatory
+    } 
+    else {
+        healthFields.style.display = "none";
+        vehicleFields.style.display = "none";
+
+        gender.required = false;
+        age.required = false;
+        vehicleNumber.required = false;
+    }
+});
 </script>

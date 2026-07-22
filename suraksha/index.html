@@ -244,7 +244,14 @@ WhatsApp
 <input type="text" name="name" placeholder="Enter your name" required><br><br>
 
 <label>Mobile No.</label>
-<input type="tel" name="mobile_no" placeholder="Enter mobile number" required><br><br>
+<input
+    type="tel"
+    name="mobile_no"
+    id="mobile_no"
+    placeholder="Enter 10-digit Mobile Number"
+    pattern="[6-9][0-9]{9}"
+    maxlength="10"
+    required><br><br>
 
 <label>Insurance Type</label><br>
 <select name="insurance_type" id="insuranceType" required>
@@ -269,7 +276,12 @@ WhatsApp
     <input type="number" name="age" id="age" placeholder="Enter your age" min="1" max="120">
     <br><br>
      <label>Pin</label>
-    <input type="number" name="pin" id="pin" placeholder="Enter your pin" min="1000" max="9999">
+    <input
+    type="text"
+    name="pin"
+    id="pin"
+    placeholder="Enter 6-digit PIN Code"
+    maxlength="6">
     <br><br>
 </div>
 
@@ -383,7 +395,7 @@ insuranceType.addEventListener("change", function () {
         vehicleNumber.required = false;
     }
 });
-const scriptURL = "https://script.google.com/macros/s/AKfycbwOBKWtQWupdqk5uPqSygPXIwNmXcn8nvRFA5Jg5Dzqj2iTwzatqbxPUQixYANJCLU/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzanYVg1n8tKqxy0jNVEvPxj13WnmzezfzGHrso5wMdmZ6aZBQaI9GjibljVmOKPlf5/exec";
 
 document.getElementById("quoteForm").addEventListener("submit", function(e){
 
@@ -431,5 +443,44 @@ document.getElementById("quoteForm").addEventListener("submit", function(e){
     });
 
 });
+const mobile = formData.mobile_no;
 
+if (!/^[6-9]\d{9}$/.test(mobile)) {
+    alert("Please enter a valid 10-digit mobile number.");
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = "Get Free Quote";
+    return;
+}
+
+if (formData.insurance_type === "Health Insurance") {
+
+    if (!formData.gender) {
+        alert("Please select Gender.");
+        return;
+    }
+
+    if (!formData.age) {
+        alert("Please enter Age.");
+        return;
+    }
+
+    if (!formData.pin) {
+        alert("Please enter PIN Code.");
+        return;
+    }
+
+    if (!/^\d{6}$/.test(formData.pin)) {
+        alert("PIN Code must be exactly 6 digits.");
+        return;
+    }
+}
+
+if (formData.insurance_type === "Vehicle Insurance") {
+
+    if (!formData.vehicle_number) {
+        alert("Please enter Vehicle Number.");
+        return;
+    }
+
+}
 </script>

@@ -238,7 +238,7 @@ WhatsApp
 
 <div class="contact-box">
     <h3>Get a Free Quote</h3>
-<form action="submit.php" method="POST">
+<form id="quoteForm">
 
     <label>Name</label>
 <input type="text" name="name" placeholder="Enter your name" required><br><br>
@@ -267,6 +267,9 @@ WhatsApp
 
     <label>Age</label>
     <input type="number" name="age" id="age" placeholder="Enter your age" min="1" max="120">
+    <br><br>
+     <label>Pin</label>
+    <input type="number" name="pin" id="pin" placeholder="Enter your pin" min="1000" max="9999">
     <br><br>
 </div>
 
@@ -344,23 +347,7 @@ WhatsApp
 
 </body>
 </html>
-<!-- <script>
-function toggleFields() {
-    const type = document.getElementById("insuranceType").value;
 
-    const health = document.getElementById("healthFields");
-    const vehicle = document.getElementById("vehicleFields");
-
-    health.style.display = "none";
-    vehicle.style.display = "none";
-
-    if (type === "health") {
-        health.style.display = "block";
-    } else if (type === "vehicle") {
-        vehicle.style.display = "block";
-    }
-}
-</script> -->
 <script>
 const insuranceType = document.getElementById("insuranceType");
 const healthFields = document.getElementById("healthFields");
@@ -396,4 +383,53 @@ insuranceType.addEventListener("change", function () {
         vehicleNumber.required = false;
     }
 });
+const scriptURL = "https://script.google.com/macros/s/AKfycbwOBKWtQWupdqk5uPqSygPXIwNmXcn8nvRFA5Jg5Dzqj2iTwzatqbxPUQixYANJCLU/exec";
+
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const formData = {
+        name: this.name.value,
+        mobile_no: this.mobile_no.value,
+        insurance_type: this.insurance_type.value,
+        gender: this.gender.value,
+        age: this.age.value,
+        pin: this.pin.value,
+        vehicle_number: this.vehicle_number.value
+    };
+
+    fetch(scriptURL,{
+        method:"POST",
+        body:JSON.stringify(formData)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+
+        if(data.status=="success"){
+
+            alert("Thank you! Our insurance advisor will contact you shortly.");
+
+            this.reset();
+
+            document.getElementById("healthFields").style.display="none";
+            document.getElementById("vehicleFields").style.display="none";
+
+        }else{
+
+            alert("Submission failed.");
+
+        }
+
+    })
+    .catch(err=>{
+
+        console.log(err);
+
+        alert("Network Error.");
+
+    });
+
+});
+
 </script>

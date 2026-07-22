@@ -374,9 +374,10 @@ insuranceType.addEventListener("change", function () {
         healthFields.style.display = "block";
         vehicleFields.style.display = "none";
 
-        gender.required = true;
-        age.required = true;
-        vehicleNumber.required = false;
+         gender.required = true;
+         age.required = true;
+         document.getElementById("pin").required = true;
+         vehicleNumber.required = false;
     } 
     else if (this.value === "Vehicle Insurance") {
         healthFields.style.display = "none";
@@ -384,7 +385,8 @@ insuranceType.addEventListener("change", function () {
 
         gender.required = false;
         age.required = false;
-        vehicleNumber.required = false; // Change to true if you want it mandatory
+        document.getElementById("pin").required = false;
+        vehicleNumber.required = true;
     } 
     else {
         healthFields.style.display = "none";
@@ -395,54 +397,9 @@ insuranceType.addEventListener("change", function () {
         vehicleNumber.required = false;
     }
 });
-const scriptURL = "https://script.google.com/macros/s/AKfycbzL-jPg4fDId3q4T5133n-VCDPUQmp1NWNWZzCjTZTVf5xZ3U65wtc1SJXUjIDmJdMb/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzeF8rLQI4hB0ufAatAdEVD9k0i-qLFLvbGjR6vkcw4ykE422NU9PIVsBIHUiXZPbw/exec";
 
-document.getElementById("quoteForm").addEventListener("submit", function(e){
 
-    e.preventDefault();
-
-    const formData = {
-        name: this.name.value,
-        mobile_no: this.mobile_no.value,
-        insurance_type: this.insurance_type.value,
-        gender: this.gender.value,
-        age: this.age.value,
-        pin: this.pin.value,
-        vehicle_number: this.vehicle_number.value
-    };
-
-    fetch(scriptURL,{
-        method:"POST",
-        body:JSON.stringify(formData)
-    })
-    .then(res=>res.json())
-    .then(data=>{
-
-        if(data.status=="success"){
-
-            alert("Thank you! Our insurance advisor will contact you shortly.");
-
-            this.reset();
-
-            document.getElementById("healthFields").style.display="none";
-            document.getElementById("vehicleFields").style.display="none";
-
-        }else{
-
-            alert("Submission failed.");
-
-        }
-
-    })
-    .catch(err=>{
-
-        console.log(err);
-
-        alert("Network Error.");
-
-    });
-
-});
 const mobile = formData.mobile_no;
 
 if (!/^[6-9]\d{9}$/.test(mobile)) {
@@ -483,4 +440,101 @@ if (formData.insurance_type === "Vehicle Insurance") {
     }
 
 }
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const formData = {
+
+        name:this.name.value.trim(),
+        mobile_no:this.mobile_no.value.trim(),
+        insurance_type:this.insurance_type.value,
+
+        gender:this.gender.value,
+        age:this.age.value,
+        pin:this.pin.value,
+
+        vehicle_number:this.vehicle_number.value.trim()
+
+    };
+
+    // Mobile Validation
+
+    if(!/^[6-9]\d{9}$/.test(formData.mobile_no)){
+        alert("Please enter a valid 10-digit Mobile Number.");
+        return;
+    }
+
+    // Health Insurance Validation
+
+    if(formData.insurance_type==="Health Insurance"){
+
+        if(!formData.gender){
+            alert("Please select Gender.");
+            return;
+        }
+
+        if(!formData.age){
+            alert("Please enter Age.");
+            return;
+        }
+
+        if(!formData.pin){
+            alert("Please enter PIN Code.");
+            return;
+        }
+
+        if(!/^\d{6}$/.test(formData.pin)){
+            alert("PIN Code must be 6 digits.");
+            return;
+        }
+
+    }
+
+    // Vehicle Validation
+
+    if(formData.insurance_type==="Vehicle Insurance"){
+
+        if(!formData.vehicle_number){
+            alert("Please enter Vehicle Number.");
+            return;
+        }
+
+    }
+
+    fetch(scriptURL,{
+        method:"POST",
+        body:JSON.stringify(formData)
+    })
+
+    .then(res=>res.json())
+
+    .then(data=>{
+
+        if(data.status==="success"){
+
+            alert("Thank you! Our insurance advisor will contact you shortly.");
+
+            document.getElementById("quoteForm").reset();
+
+            healthFields.style.display="none";
+            vehicleFields.style.display="none";
+
+        }else{
+
+            alert(data.message);
+
+        }
+
+    })
+
+    .catch(err=>{
+
+        console.log(err);
+
+        alert("Network Error.");
+
+    });
+
+});
 </script>

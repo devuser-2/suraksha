@@ -238,7 +238,8 @@ WhatsApp
 
 <div class="contact-box">
     <h3>Get a Free Quote</h3>
-<form id="quoteForm">
+<form action="submit.php" method="POST">
+
     <label>Name</label>
 <input type="text" name="name" placeholder="Enter your name" required><br><br>
 
@@ -267,8 +268,6 @@ WhatsApp
     <label>Age</label>
     <input type="number" name="age" id="age" placeholder="Enter your age" min="1" max="120">
     <br><br>
-    <label>PIN Code</label>
-<input type="text" id="pin" name="pin" maxlength="6" placeholder="Enter PIN Code">
 </div>
 
 <!-- Vehicle Insurance Fields -->
@@ -345,7 +344,23 @@ WhatsApp
 
 </body>
 </html>
+<!-- <script>
+function toggleFields() {
+    const type = document.getElementById("insuranceType").value;
 
+    const health = document.getElementById("healthFields");
+    const vehicle = document.getElementById("vehicleFields");
+
+    health.style.display = "none";
+    vehicle.style.display = "none";
+
+    if (type === "health") {
+        health.style.display = "block";
+    } else if (type === "vehicle") {
+        vehicle.style.display = "block";
+    }
+}
+</script> -->
 <script>
 const insuranceType = document.getElementById("insuranceType");
 const healthFields = document.getElementById("healthFields");
@@ -353,154 +368,32 @@ const vehicleFields = document.getElementById("vehicleFields");
 
 const gender = document.getElementById("gender");
 const age = document.getElementById("age");
-const pin = document.getElementById("pin");
 const vehicleNumber = document.getElementById("vehicle_number");
 
-// Show / Hide Fields
 insuranceType.addEventListener("change", function () {
-
     if (this.value === "Health Insurance") {
-
         healthFields.style.display = "block";
         vehicleFields.style.display = "none";
 
         gender.required = true;
         age.required = true;
-        pin.required = true;
         vehicleNumber.required = false;
-
-    }
+    } 
     else if (this.value === "Vehicle Insurance") {
-
         healthFields.style.display = "none";
         vehicleFields.style.display = "block";
 
         gender.required = false;
         age.required = false;
-        pin.required = false;
-        vehicleNumber.required = true;
-
-    }
+        vehicleNumber.required = false; // Change to true if you want it mandatory
+    } 
     else {
-
         healthFields.style.display = "none";
         vehicleFields.style.display = "none";
 
         gender.required = false;
         age.required = false;
-        pin.required = false;
         vehicleNumber.required = false;
-
     }
-
-});
-
-// Google Apps Script URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbzeF8rLQI4hB0ufAatAdEVD9k0i-qLFLvbGjR6vkcw4ykE422NU9PIVsBIHUiXZPbw/exec";
-
-// Submit Form
-document.getElementById("quoteForm").addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    const formData = {
-
-        name: this.name.value.trim(),
-        mobile_no: this.mobile_no.value.trim(),
-        insurance_type: this.insurance_type.value,
-
-        gender: this.gender.value,
-        age: this.age.value,
-        pin: this.pin.value,
-
-        vehicle_number: this.vehicle_number.value.trim()
-
-    };
-
-    // Insurance Type Validation
-    if (!formData.insurance_type) {
-        alert("Please select Insurance Type.");
-        return;
-    }
-
-    // Mobile Validation
-    if (!/^[6-9]\d{9}$/.test(formData.mobile_no)) {
-        alert("Please enter a valid 10-digit Mobile Number.");
-        return;
-    }
-
-    // Health Insurance Validation
-    if (formData.insurance_type === "Health Insurance") {
-
-        if (!formData.gender) {
-            alert("Please select Gender.");
-            return;
-        }
-
-        if (!formData.age) {
-            alert("Please enter Age.");
-            return;
-        }
-
-        if (!formData.pin) {
-            alert("Please enter PIN Code.");
-            return;
-        }
-
-        if (!/^\d{6}$/.test(formData.pin)) {
-            alert("PIN Code must be exactly 6 digits.");
-            return;
-        }
-
-    }
-
-    // Vehicle Insurance Validation
-    if (formData.insurance_type === "Vehicle Insurance") {
-
-        if (!formData.vehicle_number) {
-            alert("Please enter Vehicle Number.");
-            return;
-        }
-
-    }
-
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(formData)
-    })
-
-    .then(res => res.json())
-
-    .then(data => {
-
-        if (data.status === "success") {
-
-            alert("Thank you! Our insurance advisor will contact you shortly.");
-
-            document.getElementById("quoteForm").reset();
-
-            healthFields.style.display = "none";
-            vehicleFields.style.display = "none";
-
-            gender.required = false;
-            age.required = false;
-            pin.required = false;
-            vehicleNumber.required = false;
-
-        } else {
-
-            alert(data.message || "Something went wrong.");
-
-        }
-
-    })
-
-    .catch(err => {
-
-        console.error(err);
-        alert("Network Error.");
-
-    });
-
 });
 </script>

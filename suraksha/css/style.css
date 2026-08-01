@@ -61,12 +61,12 @@ list-style:none;
 gap:25px;
 }
 
-nav a{
-text-decoration:none;
-font-weight:600;
-color:#0a2f7a;
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #0a2f7a;
+    font-size: 18px;
 }
-
 .call-box{
 background:#16a34a;
 color:white;
@@ -178,7 +178,15 @@ background:#eef4ff;
         grid-template-columns:1fr;
     }
 }
+@media (max-width: 768px) {
+    nav a {
+        font-size: 22px;
+    }
 
+    nav ul {
+        gap: 15px;
+    }
+}
 .trust-card{
 background:white;
 padding:24px;
@@ -578,4 +586,7 @@ gap:15px;
     text-align:center;
     margin:50px 0 30px;
     color:#003366;
+}
+.btn.green i {
+    font-size: 22px;
 }

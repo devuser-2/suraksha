@@ -187,6 +187,9 @@ background:#eef4ff;
         gap: 15px;
     }
 }
+.hero-buttons .fa-whatsapp {
+    font-size: 24px;
+}
 .trust-card{
 background:white;
 padding:24px;

@@ -71,23 +71,33 @@ document.addEventListener('DOMContentLoaded', function(){
 // Show Health Insurance options
 document.addEventListener('DOMContentLoaded', function () {
 
-    const insuranceType = document.getElementById("insurance_type");
-    const healthOptions = document.getElementById("healthOptions");
+    const insuranceType = document.getElementById("insuranceType");
+    const healthFields = document.getElementById("healthFields");
+    const vehicleFields = document.getElementById("vehicleFields");
 
-    if (insuranceType && healthOptions) {
+    if (!insuranceType) return;
 
-        insuranceType.addEventListener("change", function () {
+    insuranceType.addEventListener("change", function () {
 
-            if (this.value === "health") {
-                healthOptions.style.display = "block";
-            } else {
-                healthOptions.style.display = "none";
-            }
+        if (this.value === "Health Insurance") {
 
-        });
+            healthFields.style.display = "block";
+            vehicleFields.style.display = "none";
 
-    } else {
-        console.log("Insurance elements not found");
-    }
+        } 
+        else if (this.value === "Vehicle Insurance") {
+
+            healthFields.style.display = "none";
+            vehicleFields.style.display = "block";
+
+        } 
+        else {
+
+            healthFields.style.display = "none";
+            vehicleFields.style.display = "none";
+
+        }
+
+    });
 
 });

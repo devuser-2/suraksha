@@ -64,4 +64,22 @@ document.addEventListener('DOMContentLoaded', function(){
     });
 });
 
+// Show Health Insurance options
+document.addEventListener('DOMContentLoaded', function () {
 
+    const insuranceType = document.getElementById("insurance_type");
+    const healthOptions = document.getElementById("healthOptions");
+
+    if (!insuranceType || !healthOptions) return;
+
+    insuranceType.addEventListener("change", function () {
+
+        if (this.value === "health") {
+            healthOptions.style.display = "block";
+        } else {
+            healthOptions.style.display = "none";
+        }
+
+    });
+
+});

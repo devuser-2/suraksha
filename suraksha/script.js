@@ -1,8 +1,11 @@
-document.querySelector("form").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Thank you! We will contact you soon.");
-});
+document.addEventListener('DOMContentLoaded', function(){
 
+    document.querySelector("form").addEventListener("submit", function(e){
+        e.preventDefault();
+        alert("Thank you! We will contact you soon.");
+    });
+
+});
 // Single banner image preload
 (function(){
     const banner = document.querySelector('.hero-right img');
@@ -65,21 +68,26 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 // Show Health Insurance options
+// Show Health Insurance options
 document.addEventListener('DOMContentLoaded', function () {
 
     const insuranceType = document.getElementById("insurance_type");
     const healthOptions = document.getElementById("healthOptions");
 
-    if (!insuranceType || !healthOptions) return;
+    if (insuranceType && healthOptions) {
 
-    insuranceType.addEventListener("change", function () {
+        insuranceType.addEventListener("change", function () {
 
-        if (this.value === "health") {
-            healthOptions.style.display = "block";
-        } else {
-            healthOptions.style.display = "none";
-        }
+            if (this.value === "health") {
+                healthOptions.style.display = "block";
+            } else {
+                healthOptions.style.display = "none";
+            }
 
-    });
+        });
+
+    } else {
+        console.log("Insurance elements not found");
+    }
 
 });

@@ -50,12 +50,25 @@ with trusted Health and Motor Insurance solutions.
 </p>
 
 <div class="hero-buttons">
-<a href="#contact" class="btn">Get Quote</a>
-<a href="https://wa.me/919148312175" class="btn green" target="_blank">
-    <i class="fa-brands fa-whatsapp fa-lg"></i>
-</a>
-</div>
+    
+    <a href="#contact" class="btn">
+        Get Quote
+    </a>
 
+    <a href="https://wa.me/919148312175"
+       class="btn green"
+       target="_blank"
+       aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp fa-lg"></i>
+    </a>
+
+    <a href="tel:+919148312175"
+       class="btn call-btn"
+       aria-label="Call Now">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+</div>
 </div>
 
 <div class="hero-right">
@@ -235,109 +248,208 @@ with trusted Health and Motor Insurance solutions.
 
 <div class="contact-box">
     <h3>Get a Free Quote</h3>
+<form id="quoteForm">
 
-    <form id="quoteForm">
+    <!-- Name -->
+    <label for="name">Name</label>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required>
 
-        <label>Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
-        <br><br>
+    <!-- Mobile -->
+    <label for="mobile_no">Mobile Number</label>
+    <input
+        type="tel"
+        id="mobile_no"
+        name="mobile_no"
+        placeholder="Enter 10-digit Mobile Number"
+        pattern="[6-9][0-9]{9}"
+        maxlength="10"
+        required>
 
-        <label>Mobile No.</label>
-        <input
-            type="tel"
-            name="mobile_no"
-            id="mobile_no"
-            placeholder="Enter 10-digit Mobile Number"
-            pattern="[6-9][0-9]{9}"
-            maxlength="10"
-            required>
-        <br><br>
+    <!-- Insurance Type -->
+    <label for="insuranceType">Insurance Type</label>
+    <select name="insurance_type" id="insuranceType" required>
+        <option value="">Select Insurance Type</option>
+        <option value="Health Insurance">Health Insurance</option>
+        <option value="Vehicle Insurance">Vehicle Insurance</option>
+    </select>
 
-        <label>Insurance Type</label>
-        <select name="insurance_type" id="insuranceType" required>
-            <option value="">Select</option>
-            <option value="Health Insurance">Health Insurance</option>
-            <option value="Vehicle Insurance">Vehicle Insurance</option>
-        </select>
+    <!-- Health Insurance Section -->
+    <div id="healthFields" style="display:none;">
 
+        <label>Insurance For</label>
 
-        <div id="healthFields" style="display:none;">
+        <div class="checkbox-group">
 
-            <br>
+            <label>
+                <input type="checkbox" class="member-checkbox" value="Self">
+                Self
+            </label>
 
-            <label>Insurance For</label>
-            <select name="insurance_for" id="insurance_for">
-                <option value="">Select</option>
-                <option value="Self">Self</option>
-                <option value="Spouse">Spouse</option>
-                <option value="Child">Child</option>
-                <option value="Parents">Parents</option>
-                <option value="Family">Family</option>
-            </select>
+            <label>
+                <input type="checkbox" class="member-checkbox" value="Spouse">
+                Spouse
+            </label>
 
-            <br><br>
+            <label>
+                <input type="checkbox" class="member-checkbox" value="Child">
+                Child
+            </label>
 
-            <label>Age</label>
-            <input 
-                type="number" 
-                name="age" 
-                id="age" 
-                placeholder="Enter your age" 
-                min="1" 
-                max="120">
-
-            <br><br>
-
-            <label>Pin</label>
-            <input
-                type="text"
-                name="pin"
-                id="pin"
-                placeholder="Enter 6-digit PIN Code"
-                maxlength="6">
-
-            <br><br>
+            <label>
+                <input type="checkbox" class="member-checkbox" value="Parents">
+                Parents
+            </label>
 
         </div>
 
+        <!-- Dynamic Age Fields -->
+        <div id="ageFields"></div>
 
-        <!-- Vehicle Insurance Fields -->
-        <div id="vehicleFields" style="display:none;">
+        <label for="pin">PIN Code</label>
+        <input
+            type="text"
+            id="pin"
+            name="pin"
+            placeholder="Enter 6-digit PIN Code"
+            maxlength="6"
+            pattern="[0-9]{6}">
 
-            <label>Vehicle Number (for renewals)</label>
-            <input 
-                type="text" 
-                name="vehicle_number" 
-                id="vehicle_number" 
-                placeholder="Enter vehicle number">
+    </div>
 
-            <br><br>
+    <!-- Vehicle Insurance Section -->
+    <div id="vehicleFields" style="display:none;">
 
-        </div><br><br>
+        <label for="vehicle_number">Vehicle Number</label>
+        <input
+            type="text"
+            id="vehicle_number"
+            name="vehicle_number"
+            placeholder="KA01AB1234">
 
+        <label for="vehicle_type">Vehicle Type</label>
+        <select id="vehicle_type" name="vehicle_type">
+            <option value="">Select Vehicle Type</option>
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+            <option value="Commercial Vehicle">Commercial Vehicle</option>
+        </select>
 
-        <button type="submit" class="btn primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14" 
-                      stroke="#fff" 
-                      stroke-width="2" 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round"/>
+        <label for="policy_type">Policy Type</label>
+        <select id="policy_type" name="policy_type">
+            <option value="">Select Policy Type</option>
+            <option value="New Policy">New Policy</option>
+            <option value="Renewal">Renewal</option>
+        </select>
 
-                <path d="M12 5l7 7-7 7" 
-                      stroke="#fff" 
-                      stroke-width="2" 
-                      stroke-linecap="round" 
-                      stroke-linejoin="round"/>
-            </svg>
+    </div>
 
-            <br>
+    <!-- Preferred Time -->
+    <label for="preferred_call_time">Preferred Time to Call</label>
+    <select name="preferred_call_time" id="preferred_call_time" required>
+        <option value="">Select Preferred Time</option>
+        <option value="09:00 AM - 11:00 AM">09:00 AM - 11:00 AM</option>
+        <option value="11:00 AM - 01:00 PM">11:00 AM - 01:00 PM</option>
+        <option value="01:00 PM - 03:00 PM">01:00 PM - 03:00 PM</option>
+        <option value="03:00 PM - 05:00 PM">03:00 PM - 05:00 PM</option>
+        <option value="05:00 PM - 07:00 PM">05:00 PM - 07:00 PM</option>
+        <option value="Any Time">Any Time</option>
+    </select>
 
-            <span>Submit</span>
-        </button>
+    <!-- Message -->
+    <label for="message">Additional Requirements (Optional)</label>
+    <textarea
+        id="message"
+        name="message"
+        rows="4"
+        placeholder="Tell us about your insurance requirement"></textarea>
 
-    </form>
+    <!-- Submit -->
+    <button type="submit">
+        Get Free Quote
+    </button>
+
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const insuranceType = document.getElementById("insuranceType");
+    const healthFields = document.getElementById("healthFields");
+    const vehicleFields = document.getElementById("vehicleFields");
+    const ageFields = document.getElementById("ageFields");
+
+    // Show/Hide sections
+    insuranceType.addEventListener("change", function () {
+
+        if (this.value === "Health Insurance") {
+
+            healthFields.style.display = "block";
+            vehicleFields.style.display = "none";
+
+        } else if (this.value === "Vehicle Insurance") {
+
+            healthFields.style.display = "none";
+            vehicleFields.style.display = "block";
+
+        } else {
+
+            healthFields.style.display = "none";
+            vehicleFields.style.display = "none";
+        }
+    });
+
+    // Generate age fields dynamically
+    document.querySelectorAll(".member-checkbox").forEach(function (checkbox) {
+
+        checkbox.addEventListener("change", function () {
+
+            ageFields.innerHTML = "";
+
+            document.querySelectorAll(".member-checkbox:checked")
+                .forEach(function (member) {
+
+                ageFields.innerHTML += `
+                    <label>${member.value} Age</label>
+                    <input
+                        type="number"
+                        name="${member.value.toLowerCase()}_age"
+                        min="1"
+                        max="120"
+                        placeholder="Enter ${member.value} age"
+                        required>
+                `;
+            });
+
+        });
+
+    });
+
+    // Submit
+    document.getElementById("quoteForm").addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        console.log("Form Submitted");
+
+        for (let pair of formData.entries()) {
+            console.log(pair[0] + ": " + pair[1]);
+        }
+
+        alert("Thank you! Your quote request has been submitted.");
+
+       
+
+    });
+
+});
+</script>
 
 </div>
 

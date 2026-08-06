@@ -593,3 +593,178 @@ gap:15px;
 .btn.green i {
     font-size: 22px;
 }
+/* Form Container */
+#quoteForm {
+    width: 100%;
+}
+
+/* Labels */
+#quoteForm label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Inputs & Selects */
+#quoteForm input,
+#quoteForm select,
+#quoteForm textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+/* Focus Effect */
+#quoteForm input:focus,
+#quoteForm select:focus,
+#quoteForm textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13, 110, 253, 0.2);
+}
+
+/* Placeholder */
+#quoteForm input::placeholder,
+#quoteForm textarea::placeholder {
+    color: #999;
+}
+
+/* Health & Vehicle Sections */
+#healthFields,
+#vehicleFields {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+/* Dynamic Age Fields */
+#ageFields {
+    margin-bottom: 15px;
+}
+
+/* Checkbox Group */
+#healthFields label input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+#healthFields label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Submit Button */
+#quoteForm button[type="submit"] {
+    width: 100%;
+    border: none;
+    background: #0d6efd;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#quoteForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Spacing */
+#quoteForm input,
+#quoteForm select {
+    margin-bottom: 15px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    #quoteForm button[type="submit"] {
+        padding: 13px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #quoteForm label {
+        font-size: 13px;
+    }
+
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #healthFields label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #quoteForm button[type="submit"] {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+    #healthFields,
+    #vehicleFields {
+        padding: 12px;
+    }
+
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    #quoteForm button[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.call-btn{
+    background:#0d6efd;
+    color:#fff;
+    min-width:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+.call-btn:hover{
+    opacity:0.9;
+    transform:translateY(-2px);
+}

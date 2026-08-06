@@ -101,3 +101,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+document.getElementById("insuranceType").addEventListener("change", function(){
+
+    let health = document.getElementById("healthFields");
+    let vehicle = document.getElementById("vehicleFields");
+
+    if(this.value === "Health Insurance"){
+        health.style.display = "block";
+        vehicle.style.display = "none";
+    }
+    else if(this.value === "Vehicle Insurance"){
+        health.style.display = "none";
+        vehicle.style.display = "block";
+    }
+    else{
+        health.style.display = "none";
+        vehicle.style.display = "none";
+    }
+
+});

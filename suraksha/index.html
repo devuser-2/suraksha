@@ -235,87 +235,110 @@ with trusted Health and Motor Insurance solutions.
 
 <div class="contact-box">
     <h3>Get a Free Quote</h3>
-<form id="quoteForm">
 
-    <label>Name</label>
-<input type="text" name="name" placeholder="Enter your name" required><br><br>
+    <form id="quoteForm">
 
-<label>Mobile No.</label>
-<input
-    type="tel"
-    name="mobile_no"
-    id="mobile_no"
-    placeholder="Enter 10-digit Mobile Number"
-    pattern="[6-9][0-9]{9}"
-    maxlength="10"
-    required><br><br>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <br><br>
 
-<label>Insurance Type</label>
+        <label>Mobile No.</label>
+        <input
+            type="tel"
+            name="mobile_no"
+            id="mobile_no"
+            placeholder="Enter 10-digit Mobile Number"
+            pattern="[6-9][0-9]{9}"
+            maxlength="10"
+            required>
+        <br><br>
 
-<select name="insurance_type" id="insuranceType">
-    <option value="">Select</option>
-    <option value="Health Insurance">Health Insurance</option>
-    <option value="Vehicle Insurance">Vehicle Insurance</option>
-</select>
+        <label>Insurance Type</label>
+        <select name="insurance_type" id="insuranceType" required>
+            <option value="">Select</option>
+            <option value="Health Insurance">Health Insurance</option>
+            <option value="Vehicle Insurance">Vehicle Insurance</option>
+        </select>
 
 
-<div id="healthFields" style="display:none;">
+        <div id="healthFields" style="display:none;">
 
-    <br>
+            <br>
 
-    <label>Insurance For</label>
+            <label>Insurance For</label>
+            <select name="insurance_for" id="insurance_for">
+                <option value="">Select</option>
+                <option value="Self">Self</option>
+                <option value="Spouse">Spouse</option>
+                <option value="Child">Child</option>
+                <option value="Parents">Parents</option>
+                <option value="Family">Family</option>
+            </select>
 
-    <select name="insurance_for" id="insurance_for">
-        <option value="">Select</option>
-        <option value="Self">Self</option>
-        <option value="Spouse">Spouse</option>
-        <option value="Child">Child</option>
-        <option value="Parents">Parents</option>
-        <option value="Family">Family</option>
-    </select>
+            <br><br>
 
-    <br><br>
+            <label>Age</label>
+            <input 
+                type="number" 
+                name="age" 
+                id="age" 
+                placeholder="Enter your age" 
+                min="1" 
+                max="120">
 
-    <label>Age</label>
-    <input 
-        type="number" 
-        name="age" 
-        id="age" 
-        placeholder="Enter your age" 
-        min="1" 
-        max="120">
+            <br><br>
 
-    <br><br>
+            <label>Pin</label>
+            <input
+                type="text"
+                name="pin"
+                id="pin"
+                placeholder="Enter 6-digit PIN Code"
+                maxlength="6">
 
-    <label>Pin</label>
-    <input
-        type="text"
-        name="pin"
-        id="pin"
-        placeholder="Enter 6-digit PIN Code"
-        maxlength="6">
+            <br><br>
 
-    <br><br>
+        </div>
 
-</div>
 
-<!-- Vehicle Insurance Fields -->
-<div id="vehicleFields" style="display:none;">
-    <label>Vehicle Number (for renewals)</label>
-    <input type="text" name="vehicle_number" id="vehicle_number" placeholder="Enter vehicle number">
-    <br><br>
-</div>
-</form>
-<button type="submit" class="btn primary">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M5 12h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M12 5l7 7-7 7" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg><br>
-  <span>Submit</span>
-</button>
+        <!-- Vehicle Insurance Fields -->
+        <div id="vehicleFields" style="display:none;">
 
-</form>
+            <label>Vehicle Number (for renewals)</label>
+            <input 
+                type="text" 
+                name="vehicle_number" 
+                id="vehicle_number" 
+                placeholder="Enter vehicle number">
+
+            <br><br>
+
+        </div><br><br>
+
+
+        <button type="submit" class="btn primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14" 
+                      stroke="#fff" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
+
+                <path d="M12 5l7 7-7 7" 
+                      stroke="#fff" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"/>
+            </svg>
+
+            <br>
+
+            <span>Submit</span>
+        </button>
+
+    </form>
+
 </div>
 
 <div class="contact-box address-box">

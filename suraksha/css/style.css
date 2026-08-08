@@ -771,23 +771,38 @@ gap:15px;
 
 .insurance-quick-links {
     display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
+    align-items: flex-start;
+    gap: 25px;
+
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+
     flex-wrap: wrap;
 }
 
+
+/* Each insurance option */
+
 .insurance-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
 
-    padding: 8px 12px;
+    min-width: 130px;
+
+    padding: 10px;
 
     background: #fff;
-    border-radius: 30px;
+    border-radius: 18px;
 
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
+
+    transition: 0.25s ease;
+}
+
+.insurance-item:hover {
+    transform: translateY(-3px);
 }
 
 
@@ -801,20 +816,22 @@ gap:15px;
 
     display: flex;
     align-items: center;
-    gap: 7px;
+    justify-content: center;
 
-    padding: 4px;
+    gap: 8px;
 
-    font-size: 14px;
+    padding: 5px 10px;
+
+    font-size: 15px;
     font-weight: 700;
 }
 
 .insurance-toggle i {
-    font-size: 23px;
+    font-size: 25px;
 }
 
 
-/* Different icon colours */
+/* Colours */
 
 .insurance-item:nth-child(1) .insurance-toggle {
     color: #e63956;
@@ -829,13 +846,17 @@ gap:15px;
 }
 
 
-/* IMPORTANT:
-   Hidden by default */
+/* Buttons BELOW the selected option */
 
 .insurance-actions {
     display: none;
+
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
 }
 
 
@@ -843,10 +864,12 @@ gap:15px;
 
 .plan-link {
     text-decoration: none;
+
     background: #edf4ff;
     color: #1769d2;
 
-    padding: 6px 10px;
+    padding: 6px 12px;
+
     border-radius: 18px;
 
     font-size: 11px;
@@ -858,12 +881,38 @@ gap:15px;
 
 .quote-link {
     text-decoration: none;
+
     background: #1769d2;
     color: white;
 
-    padding: 6px 10px;
+    padding: 6px 12px;
+
     border-radius: 18px;
 
     font-size: 11px;
     font-weight: 700;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .insurance-quick-links {
+        margin-left: 12px;
+        margin-top: 18px;
+        gap: 10px;
+    }
+
+    .insurance-item {
+        min-width: 110px;
+    }
+
+    .insurance-toggle {
+        font-size: 13px;
+    }
+
+    .insurance-toggle i {
+        font-size: 21px;
+    }
 }

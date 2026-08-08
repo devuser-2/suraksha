@@ -775,7 +775,7 @@ gap:15px;
     gap: 25px;
 
     margin-top: 25px;
-    margin-left: 25px;
+    margin-left: 300px;   /* move further right */
     margin-bottom: 20px;
 
     flex-wrap: wrap;
@@ -799,10 +799,6 @@ gap:15px;
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
 
     transition: 0.25s ease;
-}
-
-.insurance-item:hover {
-    transform: translateY(-3px);
 }
 
 
@@ -846,13 +842,13 @@ gap:15px;
 }
 
 
-/* Buttons BELOW the selected option */
+/* Buttons appear DOWNWARD */
 
 .insurance-actions {
     display: none;
 
+    flex-direction: column;   /* important */
     align-items: center;
-    justify-content: center;
 
     gap: 6px;
 
@@ -868,12 +864,14 @@ gap:15px;
     background: #edf4ff;
     color: #1769d2;
 
-    padding: 6px 12px;
+    padding: 6px 25px;
 
     border-radius: 18px;
 
     font-size: 11px;
     font-weight: 700;
+
+    text-align: center;
 }
 
 
@@ -885,12 +883,14 @@ gap:15px;
     background: #1769d2;
     color: white;
 
-    padding: 6px 12px;
+    padding: 6px 25px;
 
     border-radius: 18px;
 
     font-size: 11px;
     font-weight: 700;
+
+    text-align: center;
 }
 
 
@@ -899,7 +899,7 @@ gap:15px;
 @media (max-width: 600px) {
 
     .insurance-quick-links {
-        margin-left: 12px;
+        margin-left: 25px;
         margin-top: 18px;
         gap: 10px;
     }

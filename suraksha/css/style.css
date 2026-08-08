@@ -771,9 +771,9 @@ gap:15px;
 
 .insurance-quick-links {
     display: flex;
+    align-items: center;
     gap: 14px;
     margin-bottom: 18px;
-    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -782,130 +782,88 @@ gap:15px;
     align-items: center;
     gap: 8px;
 
-    min-width: 170px;
-    padding: 10px 12px;
+    padding: 8px 12px;
 
-    background: rgba(255, 255, 255, 0.96);
+    background: #fff;
     border-radius: 30px;
 
     box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
-
-    transition: all 0.25s ease;
-}
-
-.insurance-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.17);
 }
 
 
-/* Insurance name */
+/* Health / Car / Bike */
 
-.insurance-title {
+.insurance-toggle {
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     gap: 7px;
 
-    padding: 0 7px;
+    padding: 4px;
 
     font-size: 14px;
     font-weight: 700;
-
-    flex: 1;
 }
 
-.insurance-title i {
+.insurance-toggle i {
     font-size: 23px;
 }
 
 
-/* Health */
+/* Different icon colours */
 
-.insurance-item:nth-child(1) .insurance-title {
+.insurance-item:nth-child(1) .insurance-toggle {
     color: #e63956;
 }
 
-
-/* Car */
-
-.insurance-item:nth-child(2) .insurance-title {
+.insurance-item:nth-child(2) .insurance-toggle {
     color: #1769d2;
 }
 
-
-/* Bike */
-
-.insurance-item:nth-child(3) .insurance-title {
+.insurance-item:nth-child(3) .insurance-toggle {
     color: #159447;
 }
 
 
-/* Plans / Quote */
+/* IMPORTANT:
+   Hidden by default */
 
-.plan-link,
-.quote-link {
-    text-decoration: none;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    padding: 6px 10px;
-
-    border-radius: 18px;
-
-    transition: all 0.2s ease;
+.insurance-actions {
+    display: none;
+    align-items: center;
+    gap: 5px;
 }
 
 
 /* Plans */
 
 .plan-link {
-    color: #1769d2;
+    text-decoration: none;
     background: #edf4ff;
-}
+    color: #1769d2;
 
-.plan-link:hover {
-    background: #1769d2;
-    color: white;
+    padding: 6px 10px;
+    border-radius: 18px;
+
+    font-size: 11px;
+    font-weight: 700;
 }
 
 
 /* Quote */
 
 .quote-link {
-    color: white;
+    text-decoration: none;
     background: #1769d2;
-}
+    color: white;
 
-.quote-link:hover {
-    transform: scale(1.06);
-}
+    padding: 6px 10px;
+    border-radius: 18px;
 
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-    .insurance-quick-links {
-        gap: 8px;
-    }
-
-    .insurance-item {
-        min-width: 145px;
-        padding: 8px 10px;
-    }
-
-    .insurance-title {
-        font-size: 12px;
-    }
-
-    .insurance-title i {
-        font-size: 20px;
-    }
-
-    .plan-link,
-    .quote-link {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
+    font-size: 11px;
+    font-weight: 700;
 }

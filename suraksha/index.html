@@ -37,56 +37,52 @@
 
     <!-- Health -->
     <div class="insurance-item">
-        <div class="insurance-title">
+
+        <button type="button" class="insurance-toggle">
             <i class="fa-solid fa-heart-pulse"></i>
             <span>Health</span>
+        </button>
+
+        <div class="insurance-actions">
+            <a href="health-plans.html" class="plan-link">Plans</a>
+            <a href="#contact" class="quote-link">Quote</a>
         </div>
 
-        <a href="health-plans.html" class="plan-link">
-            Plans
-        </a>
-
-        <a href="#contact" class="quote-link">
-            Quote
-        </a>
     </div>
 
 
     <!-- Car -->
     <div class="insurance-item">
-        <div class="insurance-title">
+
+        <button type="button" class="insurance-toggle">
             <i class="fa-solid fa-car"></i>
             <span>Car</span>
+        </button>
+
+        <div class="insurance-actions">
+            <a href="car-plans.html" class="plan-link">Plans</a>
+            <a href="#contact" class="quote-link">Quote</a>
         </div>
 
-        <a href="car-plans.html" class="plan-link">
-            Plans
-        </a>
-
-        <a href="#contact" class="quote-link">
-            Quote
-        </a>
     </div>
 
 
     <!-- Bike -->
     <div class="insurance-item">
-        <div class="insurance-title">
+
+        <button type="button" class="insurance-toggle">
             <i class="fa-solid fa-motorcycle"></i>
             <span>Bike</span>
+        </button>
+
+        <div class="insurance-actions">
+            <a href="bike-plans.html" class="plan-link">Plans</a>
+            <a href="#contact" class="quote-link">Quote</a>
         </div>
 
-        <a href="bike-plans.html" class="plan-link">
-            Plans
-        </a>
-
-        <a href="#contact" class="quote-link">
-            Quote
-        </a>
     </div>
 
 </div>
-
 
 
 <section class="hero" id="home">
@@ -638,6 +634,40 @@ document.getElementById("quoteForm").addEventListener("submit", async function (
 💬
 </a>
 <script src="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const buttons = document.querySelectorAll(".insurance-toggle");
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+            const item = this.closest(".insurance-item");
+            const actions = item.querySelector(".insurance-actions");
+
+            // Close all other buttons
+            document.querySelectorAll(".insurance-actions").forEach(function (other) {
+
+                if (other !== actions) {
+                    other.style.display = "none";
+                }
+
+            });
+
+            // Toggle current buttons
+            if (actions.style.display === "flex") {
+                actions.style.display = "none";
+            } else {
+                actions.style.display = "flex";
+            }
+
+        });
+
+    });
+
+});
+</script>
 </body>
 </html>
 

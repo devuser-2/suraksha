@@ -899,22 +899,33 @@ gap:15px;
 @media (max-width: 600px) {
 
     .insurance-quick-links {
-        margin-left: 25px;
-        margin-top: 18px;
-        gap: 10px;
+        margin: 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
     .insurance-item {
-        min-width: 110px;
+        width: 100%;
+        max-width: 320px;
+        min-width: auto;
     }
 
     .insurance-toggle {
-        font-size: 13px;
+        width: 100%;
+        font-size: 16px;
+        padding: 14px 18px;
     }
 
     .insurance-toggle i {
-        font-size: 21px;
+        font-size: 26px;
     }
+
+    .insurance-toggle span {
+        font-size: 15px;
+    }
+
 }
 
 /* =========================================

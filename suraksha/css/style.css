@@ -834,7 +834,7 @@ gap:15px;
    BLUE GLOW
 ========================================= */
 
-.insurance-item::before {
+/* .insurance-item::before {
     content: "";
 
     position: absolute;
@@ -852,14 +852,14 @@ gap:15px;
     transition: all 0.4s ease;
 
     pointer-events: none;
-}
+} */
 
-.insurance-item:hover::before {
+/* .insurance-item:hover::before {
     width: 150px;
     height: 150px;
 
     background: rgba(23, 105, 210, 0.12);
-}
+} */
 
 
 /* Health / Car / Bike */
@@ -1103,4 +1103,142 @@ gap:15px;
 
         font-size: 10px;
     }
+}
+
+
+
+
+
+
+
+.insurance-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.insurance-section {
+    text-align: center;
+}
+
+
+/* Card */
+
+.insurance-item {
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+
+/* Hover effect */
+
+.insurance-item:hover {
+    transform: translateY(-6px);
+
+    background: #eef6ff;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+
+/* Icon */
+
+.insurance-toggle {
+    border: none;
+    background: transparent;
+
+    font-size: 35px;
+
+    color: #2563eb;
+
+    cursor: pointer;
+}
+
+
+/* Icon hover */
+
+.insurance-item:hover .insurance-toggle {
+    color: #1d4ed8;
+
+    transform: scale(1.1);
+}
+
+
+/* Text BELOW the card */
+
+.insurance-name {
+    margin-top: 10px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Plans + Quote hidden initially */
+
+.insurance-actions {
+    display: none;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+/* Show after clicking */
+
+.insurance-section.active .insurance-actions {
+    display: flex;
+}
+
+
+/* Buttons */
+
+.insurance-actions button {
+    border: none;
+
+    padding: 6px 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+/* Plans */
+
+.plan-btn {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* Quote */
+
+.quote-btn {
+    background: #dcfce7;
+    color: #15803d;
 }

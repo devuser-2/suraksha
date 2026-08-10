@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shashwat InsureTech</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/hcb.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -36,14 +37,23 @@
 <div class="insurance-quick-links">
 
     <!-- Health -->
-    <div class="insurance-item">
+    <div class="insurance-section health">
 
-        <button type="button" class="insurance-toggle">
-            <i class="fa-solid fa-heart-pulse"></i>
-        </button><br>
-<span>Health</span>
+        <!-- ONLY SYMBOL INSIDE CARD -->
+        <div class="insurance-item">
+            <button type="button" class="insurance-toggle">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </button>
+        </div>
+
+        <!-- TEXT OUTSIDE CARD -->
+        <div class="insurance-name">
+            Health
+        </div>
+
+        <!-- HIDDEN INITIALLY -->
         <div class="insurance-actions">
-            <a href="health-plans.html" class="plan-link">Plans</a>
+           <a href="health-plans.html" class="plan-link">Plans</a>
             <a href="#contact" class="quote-link">Quote</a>
         </div>
 
@@ -51,15 +61,20 @@
 
 
     <!-- Car -->
-    <div class="insurance-item">
+    <div class="insurance-section car">
 
-        <button type="button" class="insurance-toggle">
-            <i class="fa-solid fa-car"></i>
-            
-        </button><br>
-<span>Car</span>
+        <div class="insurance-item">
+            <button type="button" class="insurance-toggle">
+                <i class="fa-solid fa-car"></i>
+            </button>
+        </div>
+
+        <div class="insurance-name">
+            Car
+        </div>
+
         <div class="insurance-actions">
-            <a href="car-plans.html" class="plan-link">Plans</a>
+           <a href="car-plans.html" class="plan-link">Plans</a>
             <a href="#contact" class="quote-link">Quote</a>
         </div>
 
@@ -67,13 +82,18 @@
 
 
     <!-- Bike -->
-    <div class="insurance-item">
+    <div class="insurance-section bike">
 
-        <button type="button" class="insurance-toggle">
-            <i class="fa-solid fa-motorcycle"></i>
-           
-        </button><br>
- <span>Bike</span>
+        <div class="insurance-item">
+            <button type="button" class="insurance-toggle">
+                <i class="fa-solid fa-motorcycle"></i>
+            </button>
+        </div>
+
+        <div class="insurance-name">
+            Bike
+        </div>
+
         <div class="insurance-actions">
             <a href="bike-plans.html" class="plan-link">Plans</a>
             <a href="#contact" class="quote-link">Quote</a>
@@ -634,34 +654,25 @@ document.getElementById("quoteForm").addEventListener("submit", async function (
 </a>
 <script src="script.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.querySelectorAll(".insurance-item").forEach(card => {
 
-    const buttons = document.querySelectorAll(".insurance-toggle");
+    card.addEventListener("click", function (event) {
 
-    buttons.forEach(function (button) {
+        event.stopPropagation();
 
-        button.addEventListener("click", function () {
+        const section = this.closest(".insurance-section");
 
-            const item = this.closest(".insurance-item");
-            const actions = item.querySelector(".insurance-actions");
+        // Close other sections
+        document.querySelectorAll(".insurance-section").forEach(item => {
 
-            // Close all other buttons
-            document.querySelectorAll(".insurance-actions").forEach(function (other) {
-
-                if (other !== actions) {
-                    other.style.display = "none";
-                }
-
-            });
-
-            // Toggle current buttons
-            if (actions.style.display === "flex") {
-                actions.style.display = "none";
-            } else {
-                actions.style.display = "flex";
+            if (item !== section) {
+                item.classList.remove("active");
             }
 
         });
+
+        // Toggle current section
+        section.classList.toggle("active");
 
     });
 
@@ -669,4 +680,3 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 </body>
 </html>
-

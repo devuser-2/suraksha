@@ -1,0 +1,260 @@
+/* =========================================
+   QUICK LINKS CONTAINER
+========================================= */
+
+.insurance-quick-links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+
+/* =========================================
+   EACH INSURANCE SECTION
+========================================= */
+
+.insurance-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* =========================================
+   CARD
+   ONLY THE ICON IS INSIDE THIS
+========================================= */
+
+.insurance-item {
+    width: 110px;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    border: 1px solid #edf0f5;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+.insurance-item:hover {
+    transform: translateY(-8px);
+
+    background: #f8fbff;
+
+    border-color: #1769d2;
+
+    box-shadow:
+        0 12px 28px rgba(23, 105, 210, 0.20);
+}
+
+
+/* =========================================
+   ICON BUTTON
+========================================= */
+
+.insurance-toggle {
+    border: none;
+
+    background: transparent;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   ICON
+========================================= */
+
+.insurance-toggle i {
+    font-size: 30px;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
+
+.insurance-item:hover .insurance-toggle i {
+    transform: scale(1.2) rotate(5deg);
+
+    filter:
+        drop-shadow(0 5px 8px rgba(0, 0, 0, 0.18));
+}
+
+
+/* =========================================
+   HEALTH
+========================================= */
+
+.health .insurance-toggle {
+    color: #e63956;
+}
+
+
+/* =========================================
+   CAR
+========================================= */
+
+.car .insurance-toggle {
+    color: #1769d2;
+}
+
+
+/* =========================================
+   BIKE
+========================================= */
+
+.bike .insurance-toggle {
+    color: #159447;
+}
+
+
+/* =========================================
+   TEXT BELOW CARD
+========================================= */
+
+.insurance-name {
+    margin-top: 10px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* =========================================
+   PLANS + QUOTE
+   HIDDEN INITIALLY
+========================================= */
+
+.insurance-actions {
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   SHOW WHEN CARD IS ACTIVE
+========================================= */
+
+.insurance-section.active .insurance-actions {
+    display: flex;
+}
+
+
+/* =========================================
+   PLANS
+========================================= */
+
+.plan-link {
+    text-decoration: none;
+
+    background: #edf4ff;
+
+    color: #1769d2;
+
+    padding: 6px 25px;
+
+    border-radius: 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+}
+
+
+.plan-link:hover {
+    background: #1769d2;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-link {
+    text-decoration: none;
+
+    background: #1769d2;
+
+    color: white;
+
+    padding: 6px 25px;
+
+    border-radius: 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+}
+
+
+.quote-link:hover {
+    background: #0047ab;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(23, 105, 210, 0.25);
+}

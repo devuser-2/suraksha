@@ -830,39 +830,7 @@ gap:15px;
 }
 
 
-/* =========================================
-   BLUE GLOW
-========================================= */
 
-/* .insurance-item::before {
-    content: "";
-
-    position: absolute;
-
-    width: 90px;
-    height: 90px;
-
-    top: -45px;
-    right: -45px;
-
-    border-radius: 50%;
-
-    background: rgba(23, 105, 210, 0.07);
-
-    transition: all 0.4s ease;
-
-    pointer-events: none;
-} */
-
-/* .insurance-item:hover::before {
-    width: 150px;
-    height: 150px;
-
-    background: rgba(23, 105, 210, 0.12);
-} */
-
-
-/* Health / Car / Bike */
 
 /* =========================================
    INSURANCE ICON BUTTON

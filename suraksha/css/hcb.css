@@ -258,3 +258,142 @@
     box-shadow:
         0 5px 12px rgba(23, 105, 210, 0.25);
 }
+
+
+
+
+
+
+
+
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+     width: fit-content;
+}
+
+
+/* Get Quote */
+
+.hero-buttons .btn:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    background: #1769d2;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* WhatsApp */
+
+.hero-buttons .green {
+    width: 45px;
+    height: 45px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #25D366;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+}
+
+
+/* Call */
+
+.hero-buttons .call-btn {
+    width: 45px;
+    height: 45px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: #159447;
+    color: white;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+}
+
+
+/* Hover */
+
+.hero-buttons .btn {
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 600px) {
+
+    .hero-buttons {
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        gap: 8px;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Get Quote takes remaining space */
+    .hero-buttons .btn:first-child {
+        flex: 1;
+
+        min-width: 0;
+
+        padding: 12px 10px;
+
+        text-align: center;
+    }
+
+    /* WhatsApp */
+    .hero-buttons .green {
+        flex: 0 0 45px;
+
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Call */
+    .hero-buttons .call-btn {
+        flex: 0 0 45px;
+
+        width: 45px;
+        height: 45px;
+    }
+}
+
+

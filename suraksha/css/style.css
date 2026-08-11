@@ -835,48 +835,24 @@ gap:15px;
 /* =========================================
    INSURANCE ICON BUTTON
 ========================================= */
-
+/* Icon */
 .insurance-toggle {
-    border: none;
+    width: 30px;
+    height: 30px;
 
+    border: none;
     background: transparent;
 
-    cursor: pointer;
-
-    display: flex;
-
+    display: inline-flex;
     align-items: center;
-
     justify-content: center;
 
-    gap: 8px;
+    font-size: 35px;
 
-    padding: 8px 12px;
-
-    font-size: 15px;
-
-    font-weight: 700;
-
-    position: relative;
-    z-index: 1;
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
+    color: #2563eb;
+    cursor: pointer;
 }
 
-
-/* =========================================
-   ICON
-========================================= */
-
-.insurance-toggle i {
-    font-size: 25px;
-
-    transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
-}
 
 
 /* =========================================
@@ -887,12 +863,6 @@ gap:15px;
     transform: scale(1.05);
 }
 
-.insurance-item:hover .insurance-toggle i {
-    transform: scale(1.2) rotate(5deg);
-
-    filter:
-        drop-shadow(0 5px 8px rgba(0, 0, 0, 0.18));
-}
 
 
 /* =========================================
@@ -1044,22 +1014,7 @@ gap:15px;
         border-radius: 14px;
     }
 
-    .insurance-toggle {
-        width: 100%;
-
-        padding: 8px 2px;
-
-        font-size: 13px;
-    }
-
-    .insurance-toggle i {
-        font-size: 22px;
-    }
-
-    .insurance-toggle span {
-        font-size: 13px;
-    }
-
+   
     .insurance-actions {
         gap: 4px;
         margin-top: 5px;
@@ -1068,13 +1023,9 @@ gap:15px;
     .plan-link,
     .quote-link {
         padding: 5px 12px;
-
         font-size: 10px;
     }
 }
-
-
-
 
 
 
@@ -1125,28 +1076,6 @@ gap:15px;
     box-shadow: 0 10px 25px rgba(37,99,235,0.25);
 }
 
-
-/* Icon */
-
-.insurance-toggle {
-    border: none;
-    background: transparent;
-
-    font-size: 35px;
-
-    color: #2563eb;
-
-    cursor: pointer;
-}
-
-
-/* Icon hover */
-
-.insurance-item:hover .insurance-toggle {
-    color: #1d4ed8;
-
-    transform: scale(1.1);
-}
 
 
 /* Text BELOW the card */

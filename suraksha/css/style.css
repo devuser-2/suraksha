@@ -40,7 +40,63 @@ align-items:center;
 padding:15px 0;
 gap:20px;
 }
+/* ================================
+   NAVIGATION
+================================ */
 
+nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    white-space: nowrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+}
+
+
+/* ================================
+   WHATSAPP + CALL BUTTONS
+================================ */
+
+nav .btn {
+    width: 42px;
+    height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+}
+
+@media (max-width: 600px) {
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 15px;
+        padding: 8px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+    }
+
+    nav .btn {
+        width: 32px;
+        height: 32px;
+    }
+}
 .logo{
 flex:0 1 auto;
 display:flex;

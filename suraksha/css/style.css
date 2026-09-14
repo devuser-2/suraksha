@@ -1771,4 +1771,14 @@ footer {
     .insurance-name {
         font-size: 9px;
     }
+
+    .in-footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px 15px;
+    color: #777;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 }

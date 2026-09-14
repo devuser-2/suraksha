@@ -1,351 +1,55 @@
-/* =========================================================
-   GLOBAL RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+scroll-behavior:smooth;
 }
 
-body {
-    background: #f7f9fc;
-    color: #222;
-    line-height: 1.6;
+body{
+background:#f7f9fc;
+color:#222;
+line-height:1.6;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
+.container{
+width:90%;
+max-width:1300px;
+margin:auto;
 }
 
-a {
-    text-decoration: none;
+header{
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-button {
-    font-family: inherit;
+nav a:hover{
+color:#16a34a;
 }
 
-.container {
-    width: 90%;
-    max-width: 1300px;
-    margin: 0 auto;
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+gap:20px;
 }
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-header {
-    background: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav {
-    width: 90%;
-    max-width: 1300px;
-    margin: 0 auto;
-
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-    padding: 10px 0;
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo {
-    flex: 0 0 auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.logo img {
-    display: block;
-
-    width: auto;
-    max-width: 180px;
-    max-height: 80px;
-    height: auto;
-
-    object-fit: contain;
-}
-
-
-/* =========================================================
-   INSURANCE QUICK LINKS
-   HEALTH / CAR / BIKE
-========================================================= */
-
-.insurance-quick-links {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-
-    gap: 12px;
-
-    margin: 0;
-    padding: 0;
-
-    flex: 0 0 auto;
-}
-
-
-/* Individual insurance section */
-
-.insurance-section {
-    width: 75px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    text-align: center;
-
-    flex-shrink: 0;
-}
-
-
-/* =========================================================
-   INSURANCE ICON CARD
-========================================================= */
-
-.insurance-item {
-    width: 65px;
-    height: 58px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-
-    background: #ffffff;
-
-    border: 1px solid #edf0f5;
-    border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-    box-sizing: border-box;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
-}
-
-
-/* Button inside card */
-
-.insurance-toggle {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0;
-    margin: 0;
-
-    border: 0;
-    outline: none;
-
-    background: transparent;
-
-    cursor: pointer;
-
-    color: inherit;
-
-    -webkit-tap-highlight-color: transparent;
-}
-
-
-/* Insurance icons */
-
-.insurance-toggle i {
-    font-size: 25px;
-
-    line-height: 1;
-
-    display: block;
-
-    transition:
-        transform 0.25s ease,
-        filter 0.25s ease;
-}
-
-
-/* Hover */
-
-.insurance-item:hover {
-    transform: translateY(-4px);
-
-    background: #f8fbff;
-
-    border-color: #1769d2;
-
-    box-shadow: 0 8px 20px rgba(23, 105, 210, 0.18);
-}
-
-.insurance-item:hover .insurance-toggle i {
-    transform: scale(1.12) rotate(4deg);
-}
-
-
-/* =========================================================
-   INSURANCE COLORS
-========================================================= */
-
-.health .insurance-toggle {
-    color: #e63956;
-}
-
-.car .insurance-toggle {
-    color: #1769d2;
-}
-
-.bike .insurance-toggle {
-    color: #159447;
-}
-
-
-/* =========================================================
-   INSURANCE NAME
-========================================================= */
-
-.insurance-name {
-    margin-top: 4px;
-
-    font-size: 11px;
-    line-height: 15px;
-
-    font-weight: 700;
-
-    color: #222;
-
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   INSURANCE ACTION BUTTONS
-   PLANS / QUOTE
-========================================================= */
-
-.insurance-actions {
-    display: none;
-
-    flex-direction: column;
-    align-items: center;
-
-    gap: 4px;
-
-    margin-top: 5px;
-
-    width: 100%;
-}
-
-
-/* Show buttons when clicked */
-
-.insurance-section.active .insurance-actions {
-    display: flex;
-}
-
-
-/* Common action button */
-
-.plan-link,
-.quote-link {
-    display: block;
-
-    width: 60px;
-
-    padding: 4px 5px;
-
-    box-sizing: border-box;
-
-    border-radius: 12px;
-
-    text-decoration: none;
-
-    font-size: 9px;
-    line-height: 12px;
-
-    font-weight: 700;
-
-    text-align: center;
-
-    transition: 0.2s ease;
-}
-
-
-/* Plans */
-
-.plan-link {
-    background: #edf4ff;
-    color: #1769d2;
-}
-
-.plan-link:hover {
-    background: #1769d2;
-    color: #ffffff;
-}
-
-
-/* Quote */
-
-.quote-link {
-    background: #1769d2;
-    color: #ffffff;
-}
-
-.quote-link:hover {
-    background: #0047ab;
-    color: #ffffff;
-}
-
-
-/* =========================================================
+/* ================================
    NAVIGATION
-========================================================= */
-
-nav {
-    margin-left: auto;
-}
+================================ */
 
 nav ul {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    gap: 20px;
-
+    gap: 25px;
     list-style: none;
-
     margin: 0;
     padding: 0;
 }
@@ -356,857 +60,32 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-
-    font-weight: 600;
-
-    color: #0a2f7a;
-
-    font-size: 16px;
-
-    transition: color 0.2s ease;
-}
-
-nav ul li a:hover {
-    color: #16a34a;
 }
 
 
-/* =========================================================
-   WHATSAPP / CALL BUTTONS
-========================================================= */
+/* ================================
+   WHATSAPP + CALL BUTTONS
+================================ */
 
 nav .btn {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    padding: 0;
-
     border-radius: 50%;
-
-    transition:
-        transform 0.2s ease,
-        opacity 0.2s ease;
 }
 
-nav .btn:hover {
-    transform: translateY(-2px);
-    opacity: 0.9;
-}
-
-
-/* WhatsApp */
-
-nav .green {
-    background: #16a34a;
-    color: #ffffff;
-}
-
-
-/* Call */
-
-nav .call-btn {
-    background: #0d6efd;
-    color: #ffffff;
-}
-
-
-/* =========================================================
-   HERO SECTION
-========================================================= */
-
-.hero {
-    min-height: 650px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 50px;
-
-    padding: 70px 0;
-}
-
-.hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero-left h1 {
-    font-size: clamp(36px, 5vw, 60px);
-
-    line-height: 1.15;
-
-    color: #0a2f7a;
-
-    margin-bottom: 20px;
-}
-
-.hero-left h1 span {
-    color: #16a34a;
-}
-
-.hero-left p {
-    font-size: 18px;
-
-    color: #555;
-
-    max-width: 600px;
-
-    margin-bottom: 30px;
-}
-
-
-/* =========================================================
-   HERO BUTTONS
-========================================================= */
-
-.hero-buttons {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.hero-buttons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 24px;
-
-    border-radius: 8px;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.hero-buttons a:hover {
-    transform: translateY(-2px);
-}
-
-
-/* Primary button */
-
-.btn-primary {
-    background: #0a2f7a;
-    color: #ffffff;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 6px 18px rgba(10, 47, 122, 0.25);
-}
-
-
-/* Green button */
-
-.btn-green {
-    background: #16a34a;
-    color: #ffffff;
-}
-
-.btn-green:hover {
-    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.25);
-}
-
-
-/* =========================================================
-   HERO RIGHT
-========================================================= */
-
-.hero-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-right img {
-    width: 100%;
-    max-width: 550px;
-
-    display: block;
-
-    border-radius: 20px;
-}
-
-
-/* =========================================================
-   TRUST SECTION
-========================================================= */
-
-.trust-section {
-    padding: 50px 0;
-
-    background: #ffffff;
-}
-
-.trust-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.trust-card {
-    background: #ffffff;
-
-    padding: 30px 20px;
-
-    border-radius: 14px;
-
-    text-align: center;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-}
-
-.trust-card i {
-    font-size: 32px;
-
-    color: #1769d2;
-
-    margin-bottom: 12px;
-}
-
-.trust-card h3 {
-    font-size: 20px;
-
-    color: #0a2f7a;
-
-    margin-bottom: 8px;
-}
-
-.trust-card p {
-    font-size: 14px;
-
-    color: #666;
-}
-
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services {
-    padding: 70px 0;
-}
-
-.section-title {
-    text-align: center;
-
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 36px;
-
-    color: #0a2f7a;
-
-    margin-bottom: 10px;
-}
-
-.section-title p {
-    color: #666;
-
-    max-width: 700px;
-
-    margin: 0 auto;
-}
-
-.services-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.service-card {
-    background: #ffffff;
-
-    padding: 30px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
-}
-
-.service-card i {
-    font-size: 35px;
-
-    color: #1769d2;
-
-    margin-bottom: 15px;
-}
-
-.service-card h3 {
-    color: #0a2f7a;
-
-    font-size: 21px;
-
-    margin-bottom: 10px;
-}
-
-.service-card p {
-    color: #666;
-
-    font-size: 14px;
-}
-
-
-/* =========================================================
-   ABOUT SECTION
-========================================================= */
-
-.about {
-    padding: 70px 0;
-
-    background: #ffffff;
-}
-
-.about-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 50px;
-
-    align-items: center;
-}
-
-.about-image img {
-    width: 100%;
-
-    max-width: 550px;
-
-    border-radius: 18px;
-
-    display: block;
-}
-
-.about-content h2 {
-    font-size: 36px;
-
-    color: #0a2f7a;
-
-    margin-bottom: 20px;
-}
-
-.about-content p {
-    color: #555;
-
-    margin-bottom: 15px;
-}
-
-
-/* =========================================================
-   CONTACT SECTION
-========================================================= */
-
-.contact {
-    padding: 70px 0;
-}
-
-.contact-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 40px;
-}
-
-.contact-info {
-    background: #ffffff;
-
-    padding: 30px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-}
-
-.contact-info h2 {
-    color: #0a2f7a;
-
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin-bottom: 12px;
-
-    color: #555;
-}
-
-.contact-info i {
-    width: 25px;
-
-    color: #1769d2;
-}
-
-
-/* Contact form */
-
-.contact-form {
-    background: #ffffff;
-
-    padding: 30px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
-}
-
-.contact-form input,
-.contact-form textarea,
-.contact-form select {
-    width: 100%;
-
-    padding: 12px 14px;
-
-    margin-bottom: 15px;
-
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
-    outline: none;
-
-    font-size: 14px;
-
-    background: #ffffff;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form select:focus {
-    border-color: #1769d2;
-}
-
-.contact-form textarea {
-    min-height: 130px;
-
-    resize: vertical;
-}
-
-.contact-form button {
-    width: 100%;
-
-    padding: 13px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #0a2f7a;
-
-    color: #ffffff;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-.contact-form button:hover {
-    background: #1769d2;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer {
-    background: #0a2f7a;
-
-    color: #ffffff;
-
-    padding: 40px 0 20px;
-}
-
-.footer-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 30px;
-
-    margin-bottom: 30px;
-}
-
-.footer-column h3 {
-    font-size: 18px;
-
-    margin-bottom: 15px;
-}
-
-.footer-column p,
-.footer-column a {
-    color: rgba(255, 255, 255, 0.85);
-
-    font-size: 14px;
-}
-
-.footer-column a {
-    display: block;
-
-    margin-bottom: 8px;
-}
-
-.footer-column a:hover {
-    color: #ffffff;
-}
-
-.footer-bottom {
-    text-align: center;
-
-    padding-top: 20px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-
-    font-size: 13px;
-
-    color: rgba(255, 255, 255, 0.75);
-}
-
-
-/* =========================================================
-   FLOATING WHATSAPP
-========================================================= */
-
-.floating-whatsapp {
-    position: fixed;
-
-    right: 20px;
-    bottom: 20px;
-
-    width: 55px;
-    height: 55px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #25d366;
-
-    color: #ffffff;
-
-    border-radius: 50%;
-
-    font-size: 28px;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.20);
-
-    z-index: 9999;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.floating-whatsapp:hover {
-    transform: scale(1.08);
-
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-}
-
-
-/* =========================================================
-   LAPTOP / SMALL DESKTOP
-========================================================= */
-
-@media (max-width: 1200px) {
-
-    .nav {
-        gap: 14px;
-    }
-
-    .logo img {
-        max-width: 160px;
-        max-height: 70px;
-    }
-
-    .insurance-quick-links {
-        gap: 8px;
-    }
-
-    .insurance-section {
-        width: 65px;
-    }
-
-    .insurance-item {
-        width: 58px;
-        height: 54px;
-    }
-
-    .insurance-toggle i {
-        font-size: 22px;
-    }
-
-    .insurance-name {
-        font-size: 10px;
-    }
+@media (max-width: 600px) {
 
     nav ul {
-        gap: 12px;
-    }
-
-    nav ul li a {
-        font-size: 14px;
-    }
-
-    nav .btn {
-        width: 36px;
-        height: 36px;
-    }
-
-    .hero {
-        gap: 35px;
-    }
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    /* Header */
-
-    .nav {
-        gap: 10px;
-    }
-
-    .logo img {
-        max-width: 145px;
-    }
-
-    .insurance-section {
-        width: 60px;
-    }
-
-    .insurance-item {
-        width: 55px;
-        height: 50px;
-    }
-
-    .insurance-toggle i {
-        font-size: 21px;
-    }
-
-    nav ul {
-        gap: 8px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-    nav .btn {
-        width: 34px;
-        height: 34px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-
-        padding: 55px 0;
-    }
-
-    .hero-left {
-        align-items: center;
-    }
-
-    .hero-left p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .hero-right {
-        order: -1;
-    }
-
-
-    /* Services */
-
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* Trust */
-
-    .trust-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    /* About */
-
-    .about-grid {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-    .about-image {
         display: flex;
-        justify-content: center;
-    }
-
-
-    /* Contact */
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-
-    /* Footer */
-
-    .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-    header {
-        position: relative;
-    }
-
-    .nav {
-        width: 94%;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 10px;
-
-        padding: 10px 0 15px;
-    }
-
-
-    /* Logo */
-
-    .logo {
-        justify-content: center;
-    }
-
-    .logo img {
-        max-width: 180px;
-        max-height: 70px;
-    }
-
-
-    /* Insurance */
-
-    .insurance-quick-links {
-        width: 100%;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: flex-start;
-
-        gap: 10px;
-
-        margin: 0;
-
-        padding: 0 5px;
-
-        box-sizing: border-box;
-    }
-
-    .insurance-section {
-        width: 85px;
-        max-width: 85px;
-    }
-
-    .insurance-item {
-        width: 70px;
-        height: 65px;
-    }
-
-    .insurance-toggle i {
-        font-size: 30px;
-    }
-
-    .insurance-name {
-        font-size: 12px;
-
-        margin-top: 5px;
-    }
-
-    .plan-link,
-    .quote-link {
-        width: 65px;
-
-        font-size: 9px;
-    }
-
-
-    /* Navigation */
-
-    nav {
-        width: 100%;
-
-        margin-left: 0;
-    }
-
-    nav ul {
-        width: 100%;
-
-        display: flex;
-
         flex-wrap: wrap;
-
         justify-content: center;
-
-        gap: 8px 15px;
+        gap: 10px 15px;
+        padding: 8px;
     }
 
     nav ul li a {
@@ -1214,209 +93,1105 @@ footer {
     }
 
     nav .btn {
-        width: 34px;
-        height: 34px;
+        width: 32px;
+        height: 32px;
     }
+}
+.logo{
+flex:0 1 auto;
+display:flex;
+align-items:center;
+}
 
+.logo img{
+max-height:80px;
+width:auto;
+max-width:100%;
+height:auto;
+display:block;
+}
 
-    /* Hero */
+nav ul{
+display:flex;
+list-style:none;
+gap:25px;
+}
 
-    .hero {
-        padding: 45px 0;
-    }
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #0a2f7a;
+    font-size: 18px;
+}
+.call-box{
+background:#16a34a;
+color:white;
+padding:12px 20px;
+border-radius:10px;
+font-weight:bold;
+}
 
-    .hero-left h1 {
-        font-size: 38px;
-    }
+.hero{
+display:grid;
+grid-template-columns:minmax(320px, 1.2fr) minmax(320px, 0.8fr);
+align-items:start;
+padding:70px 8%;
+gap:40px;
+background:linear-gradient(135deg, #f4f8ff 0%, #eef7f0 100%);
+border-radius:0 0 30px 30px;
+}
 
-    .hero-left p {
-        font-size: 16px;
-    }
+.hero-left{
+max-width:650px;
+transform: translateY(-12px);
+}
 
+.hero-right{
+display:flex;
+justify-content:center;
+align-items:center;
+}
 
-    /* Sections */
+.hero-badge{
+display:inline-block;
+background:#e7f6eb;
+color:#16a34a;
+padding:8px 14px;
+border-radius:999px;
+font-size:14px;
+font-weight:600;
+margin-bottom:15px;
+}
 
-    .section-title h2 {
-        font-size: 30px;
-    }
+.hero h1{
+font-size:56px;
+color:#0a2f7a;
+line-height:1.1;
+}
 
-    .services,
-    .about,
-    .contact {
-        padding: 50px 0;
-    }
+.hero span{
+color:#16a34a;
+}
 
+.hero p{
+margin:20px 0;
+font-size:18px;
+}
 
-    /* Services */
+.hero-right img{
+width:100%;
+max-width:520px;
+border-radius:20px;
+box-shadow:0 18px 40px rgba(10,47,122,.08);
+display:block;
+}
 
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:20px;
+}
 
+.btn{
+display:inline-block;
+background:#0a2f7a;
+color:white;
+padding:12px 25px;
+border-radius:8px;
+text-decoration:none;
+transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
 
-    /* Trust */
+.btn:hover{
+transform:translateY(-2px);
+box-shadow:0 8px 20px rgba(10,47,122,.2);
+}
 
-    .trust-grid {
-        grid-template-columns: 1fr;
-    }
+.green{
+background:#16a34a;
+}
 
+.trust-section{
+padding:50px 8%;
+background:#eef4ff;
+}
 
-    /* Footer */
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:18px;
+}
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-
-        text-align: center;
+@media (max-width:768px){
+    .trust-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 }
 
+@media (max-width:480px){
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+}
+@media (max-width: 768px) {
+    nav a {
+        font-size: 22px;
+    }
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
+    nav ul {
+        gap: 15px;
+    }
+}
+.hero-buttons .fa-whatsapp {
+    font-size: 24px;
+}
+.trust-card{
+background:white;
+padding:24px;
+border-radius:18px;
+box-shadow:0 12px 35px rgba(10,47,122,.08);
+text-align:center;
+min-height:170px;
+}
 
+.trust-card span{
+font-size:24px;
+display:inline-block;
+margin-bottom:10px;
+}
+
+.trust-card h3{
+margin:0 0 10px;
+color:#0a2f7a;
+font-size:18px;
+}
+
+.trust-card p{
+color:#444;
+line-height:1.6;
+font-size:14px;
+}
+
+
+.feature:hover,
+.card:hover,
+.contact-box:hover,
+.why-grid > div:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 28px rgba(0,0,0,.12);
+}
+
+.services{
+padding:70px 8%;
+}
+
+.services h2{
+text-align:center;
+margin-bottom:40px;
+color:#0a2f7a;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.card h3{
+color:#16a34a;
+margin-bottom:20px;
+}
+
+.card li{
+margin-bottom:12px;
+}
+
+.benefits-list{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.benefits-list li{
+display:flex;
+align-items:center;
+gap:12px;
+margin-bottom:12px;
+}
+
+.benefits-list img{
+width:26px;
+height:26px;
+object-fit:contain;
+flex-shrink:0;
+}
+
+.why-us{
+padding:70px 8%;
+background:#eef4ff;
+}
+
+.services h2,
+.contact-section h2,
+.why-us h2{
+position:relative;
+display:inline-block;
+margin-bottom:25px;
+padding-bottom:8px;
+}
+
+.services h2::after,
+.contact-section h2::after,
+.why-us h2::after{
+content:'';
+position:absolute;
+left:0;
+bottom:0;
+width:60px;
+height:3px;
+background:#16a34a;
+border-radius:999px;
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:30px;
+}
+
+.why-grid > div{
+background:white;
+padding:24px;
+border-radius:16px;
+box-shadow:0 8px 24px rgba(10,47,122,.08);
+transition:transform .25s ease, box-shadow .25s ease;
+position:relative;
+overflow:hidden;
+}
+
+.why-grid > div::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(135deg, rgba(22,163,74,.12), transparent 60%);
+opacity:0;
+transition:opacity .25s ease;
+}
+
+.why-grid > div:hover::before{
+opacity:1;
+}
+
+.why-grid h4{
+color:#0a2f7a;
+margin-bottom:8px;
+}
+
+.why-grid p{
+color:#555;
+}
+
+.contact-section{
+padding:70px 8%;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 380px; /* form + sidebar */
+    gap:30px;
+    align-items:start;
+}
+
+.contact-box{
+    background:white;
+    padding:22px;
+    border-radius:14px;
+    box-shadow:0 8px 30px rgba(9,30,66,.04);
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+
+/* Address card enhancements */
+.address-box{
+    overflow:hidden;
+    position:relative;
+    animation:cardEntrance .6s ease both;
+}
+
+.address-box address{
+    display:block;
+    font-style:normal;
+    color:#111827;
+    line-height:1.9;
+    font-size:16px;
+    margin-top:8px;
+}
+
+.address-actions{
+    margin-top:18px;
+    display:flex;
+    gap:12px;
+}
+
+.btn.outline{
+    background:transparent;
+    color:#0a2f7a;
+    border:1.25px solid rgba(10,47,122,.12);
+    padding:10px 14px;
+    border-radius:10px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    transition:background .18s ease, transform .12s ease;
+}
+
+.btn.outline:hover{ background:rgba(10,47,122,.04); transform:translateY(-2px); }
+
+.btn.outline svg{ flex:0 0 18px; }
+
+@keyframes cardEntrance{
+    from{ transform:translateY(8px); opacity:0; }
+    to{ transform:translateY(0); opacity:1; }
+}
+
+/* temporary feedback state for copy */
+.copied{ background:#16a34a !important; color:#fff !important; border-color:transparent !important; }
+
+/* Form controls styling */
+input, select, button{ font:inherit; }
+
+input, select{
+    width:100%;
+    padding:14px 16px;
+    margin-top:8px;
+    border:1px solid #e6edf6;
+    border-radius:10px;
+    background:#fff;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
+    transition:box-shadow .18s ease, border-color .18s ease, transform .12s ease;
+}
+
+input::placeholder{ color:#bfcbd9; }
+
+input:focus, select:focus{
+    outline:none;
+    border-color:#0a2f7a;
+    box-shadow:0 8px 24px rgba(10,47,122,.06);
+    transform:translateY(-2px);
+}
+
+label{ display:block; color:#173a5a; margin-bottom:8px; font-weight:600; }
+
+/* Primary submit button */
+.btn.primary{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:linear-gradient(90deg,#0a2f7a,#0a3f9a);
+    color:#fff;
+    padding:12px 18px;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(10,47,122,.12);
+    border:0;
+}
+
+.btn.primary svg{ transform:translateX(0); transition:transform .18s ease; }
+.btn.primary:hover svg{ transform:translateX(4px); }
+
+@media(max-width:900px){
+    .contact-grid{ grid-template-columns:1fr; }
+    .address-actions{ justify-content:flex-start; }
+}
+
+input,
+select,
+button{
+font:inherit;
+}
+
+input,
+select{
+width:100%;
+padding:12px 14px;
+margin-top:8px;
+border:1px solid #dbe4f0;
+border-radius:8px;
+background:#fdfefe;
+}
+
+input:focus,
+select:focus{
+outline:none;
+border-color:#0a2f7a;
+box-shadow:0 0 0 3px rgba(10,47,122,.12);
+}
+
+footer{
+background:#0a2f7a;
+color:white;
+padding:30px;
+}
+
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#16a34a;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+color:white;
+}
+
+@media(max-width:768px){
+
+.hero,
+.service-grid,
+.contact-grid,
+.why-grid,
+.features{
+grid-template-columns:1fr;
+}
+
+.nav{
+flex-direction:column;
+gap:15px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+.footer-content{
+flex-direction:column;
+gap:15px;
+}
+}
+.about-content{
+    max-width:900px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.about-content p{
+    font-size:17px;
+    line-height:1.9;
+    color:#555;
+    margin-bottom:20px;
+}
+
+.about-content blockquote{
+    margin:35px auto;
+    padding:20px;
+    max-width:700px;
+    border-left:5px solid #28a745;
+    background:#f8f9fa;
+    font-size:20px;
+    font-style:italic;
+    color:#333;
+}
+
+.dynamic-quote{
+    overflow:hidden;
+    position:relative;
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,.06);
+}
+
+.dynamic-quote::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, transparent, rgba(22,163,74,.12), transparent);
+    transform:translateX(-100%);
+    animation:shine 3s infinite;
+}
+
+.quote-text{
+    display:inline-block;
+    animation:fadeSlide 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes shine {
+    100% { transform:translateX(100%); }
+}
+
+@keyframes fadeSlide {
+    from { opacity:.8; transform:translateY(2px); }
+    to { opacity:1; transform:translateY(-2px); }
+}
+
+.why-title{
+    text-align:center;
+    margin:50px 0 30px;
+    color:#003366;
+}
+.btn.green i {
+    font-size: 22px;
+}
+/* Form Container */
+#quoteForm {
+    width: 100%;
+}
+
+/* Labels */
+#quoteForm label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+/* Inputs & Selects */
+#quoteForm input,
+#quoteForm select,
+#quoteForm textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+/* Focus Effect */
+#quoteForm input:focus,
+#quoteForm select:focus,
+#quoteForm textarea:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 6px rgba(13, 110, 253, 0.2);
+}
+
+/* Placeholder */
+#quoteForm input::placeholder,
+#quoteForm textarea::placeholder {
+    color: #999;
+}
+
+/* Health & Vehicle Sections */
+#healthFields,
+#vehicleFields {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+}
+
+/* Dynamic Age Fields */
+#ageFields {
+    margin-bottom: 15px;
+}
+
+/* Checkbox Group */
+#healthFields label input[type="checkbox"] {
+    width: auto;
+    margin-right: 6px;
+}
+
+#healthFields label {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Submit Button */
+#quoteForm button[type="submit"] {
+    width: 100%;
+    border: none;
+    background: #0d6efd;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#quoteForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+    opacity: 0.95;
+}
+
+/* Spacing */
+#quoteForm input,
+#quoteForm select {
+    margin-bottom: 15px;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 14px;
+        padding: 11px;
+    }
+
+    #quoteForm button[type="submit"] {
+        padding: 13px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    #quoteForm label {
+        font-size: 13px;
+    }
+
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #healthFields label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    #quoteForm button[type="submit"] {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+/* Small Mobile */
 @media (max-width: 480px) {
 
-    .nav {
-        width: 96%;
+    #healthFields,
+    #vehicleFields {
+        padding: 12px;
     }
 
-
-    /* Logo */
-
-    .logo img {
-        max-width: 160px;
-        max-height: 65px;
+    #quoteForm input,
+    #quoteForm select {
+        font-size: 13px;
+        padding: 10px;
     }
 
+    #quoteForm button[type="submit"] {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
 
-    /* Insurance */
+.call-btn{
+    background:#0d6efd;
+    color:#fff;
+    min-width:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+}
+
+.call-btn:hover{
+    opacity:0.9;
+    transform:translateY(-2px);
+}
+
+.insurance-quick-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+
+    margin-top: 25px;
+    margin-left: 150px;   /* move further right */
+    margin-bottom: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* Each insurance option */
+
+.insurance-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 130px;
+
+    padding: 15px 12px;
+
+    background: #fff;
+
+    border-radius: 18px;
+
+    border: 1px solid #edf0f5;
+
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
+
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+/* =========================================
+   CARD HOVER EFFECT
+========================================= */
+
+.insurance-item:hover {
+    transform: translateY(-8px);
+
+    border-color: #1769d2;
+
+    background: #f8fbff;
+
+    box-shadow:
+        0 12px 28px rgba(23, 105, 210, 0.20);
+}
+
+
+
+
+/* =========================================
+   INSURANCE ICON BUTTON
+========================================= */
+/* Icon */
+.insurance-toggle {
+    width: 30px;
+    height: 30px;
+
+    border: none;
+    background: transparent;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 35px;
+
+    color: #2563eb;
+    cursor: pointer;
+}
+
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
+
+.insurance-item:hover .insurance-toggle {
+    transform: scale(1.05);
+}
+
+
+
+/* =========================================
+   HEALTH
+========================================= */
+
+.insurance-item:nth-child(1) .insurance-toggle {
+    color: #e63956;
+}
+
+
+/* =========================================
+   CAR
+========================================= */
+
+.insurance-item:nth-child(2) .insurance-toggle {
+    color: #1769d2;
+}
+
+
+/* =========================================
+   BIKE
+========================================= */
+
+.insurance-item:nth-child(3) .insurance-toggle {
+    color: #159447;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.insurance-actions {
+    display: none;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   PLANS
+========================================= */
+
+.plan-link {
+    text-decoration: none;
+
+    background: #edf4ff;
+
+    color: #1769d2;
+
+    padding: 6px 25px;
+
+    border-radius: 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+}
+
+.plan-link:hover {
+    background: #1769d2;
+
+    color: #fff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.quote-link {
+    text-decoration: none;
+
+    background: #1769d2;
+
+    color: white;
+
+    padding: 6px 25px;
+
+    border-radius: 18px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+}
+
+.quote-link:hover {
+    background: #0047ab;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(23, 105, 210, 0.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
 
     .insurance-quick-links {
-        gap: 6px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
 
-        padding: 0;
-    }
+        justify-content: center;
+        align-items: stretch;
 
-    .insurance-section {
-        width: 78px;
-        max-width: 78px;
+        gap: 8px;
+
+        margin: 20px 8px;
+        width: auto;
     }
 
     .insurance-item {
-        width: 64px;
-        height: 60px;
+        flex: 1 1 0;
+
+        width: auto;
+        min-width: 0;
+        max-width: none;
+
+        min-height: 125px;
+
+        margin: 0;
+        padding: 12px 4px;
+
+        border-radius: 14px;
     }
 
-    .insurance-toggle i {
-        font-size: 27px;
-    }
-
-    .insurance-name {
-        font-size: 11px;
+   
+    .insurance-actions {
+        gap: 4px;
+        margin-top: 5px;
     }
 
     .plan-link,
     .quote-link {
-        width: 58px;
-
-        padding: 4px;
-
-        font-size: 8px;
-    }
-
-
-    /* Navigation */
-
-    nav ul {
-        gap: 7px 10px;
-    }
-
-    nav ul li a {
-        font-size: 12px;
-    }
-
-
-    /* Hero */
-
-    .hero-left h1 {
-        font-size: 32px;
-    }
-
-    .hero-left p {
-        font-size: 15px;
-    }
-
-    .hero-buttons {
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: stretch;
-    }
-
-    .hero-buttons a {
-        width: 100%;
-    }
-
-
-    /* Floating WhatsApp */
-
-    .floating-whatsapp {
-        width: 50px;
-        height: 50px;
-
-        right: 15px;
-        bottom: 15px;
-
-        font-size: 25px;
+        padding: 5px 12px;
+        font-size: 10px;
     }
 }
 
 
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
 
-@media (max-width: 360px) {
 
-    .insurance-quick-links {
-        gap: 4px;
-    }
+.insurance-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
 
-    .insurance-section {
-        width: 72px;
-    }
+.insurance-section {
+    text-align: center;
+}
 
-    .insurance-item {
-        width: 58px;
-        height: 55px;
-    }
 
-    .insurance-toggle i {
-        font-size: 24px;
-    }
+/* Card */
 
-    .insurance-name {
-        font-size: 10px;
-    }
+.insurance-item {
+    width: 110px;
+    height: 110px;
 
-    .plan-link,
-    .quote-link {
-        width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        font-size: 8px;
-    }
+    background: white;
 
-    .logo img {
-        max-width: 145px;
-    }
+    border: 1px solid #ddd;
+    border-radius: 15px;
 
-    nav ul {
-        gap: 5px 8px;
-    }
+    cursor: pointer;
 
-    nav ul li a {
-        font-size: 11px;
-    }
+    transition: all 0.3s ease;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+
+/* Hover effect */
+
+.insurance-item:hover {
+    transform: translateY(-6px);
+
+    background: #eef6ff;
+
+    border-color: #2563eb;
+
+    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
+}
+
+
+
+/* Text BELOW the card */
+
+.insurance-name {
+    margin-top: 10px;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Plans + Quote hidden initially */
+
+.insurance-actions {
+    display: none;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+/* Show after clicking */
+
+.insurance-section.active .insurance-actions {
+    display: flex;
+}
+
+
+/* Buttons */
+
+.insurance-actions button {
+    border: none;
+
+    padding: 6px 12px;
+
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    cursor: pointer;
+}
+
+
+/* Plans */
+
+.plan-btn {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+
+/* Quote */
+
+.quote-btn {
+    background: #dcfce7;
+    color: #15803d;
 }

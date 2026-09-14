@@ -1,30 +1,41 @@
-/* =========================================
-   QUICK LINKS CONTAINER
-========================================= */
+
+/* =========================================================
+   INSURANCE QUICK LINKS
+========================================================= */
 
 .insurance-quick-links {
+    width: 100%;
+
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 30px;
+
+    gap: 35px;
+
+    margin: 0 auto;
 }
 
 
-/* =========================================
+/* =========================================================
    EACH INSURANCE SECTION
-========================================= */
+========================================================= */
 
 .insurance-section {
+    width: 120px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    text-align: center;
+
+    flex-shrink: 0;
 }
 
 
-/* =========================================
-   CARD
-   ONLY THE ICON IS INSIDE THIS
-========================================= */
+/* =========================================================
+   INSURANCE CARD
+========================================================= */
 
 .insurance-item {
     width: 110px;
@@ -34,20 +45,22 @@
     align-items: center;
     justify-content: center;
 
-    padding: 0;
-
     background: #fff;
 
     border-radius: 18px;
 
     border: 1px solid #edf0f5;
 
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.10);
 
     position: relative;
+
     overflow: hidden;
 
     cursor: pointer;
+
+    box-sizing: border-box;
 
     transition:
         transform 0.3s ease,
@@ -57,12 +70,57 @@
 }
 
 
-/* =========================================
+/* =========================================================
+   ICON BUTTON RESET
+========================================================= */
+
+.insurance-toggle {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    outline: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.insurance-toggle i {
+    display: block;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* =========================================================
    CARD HOVER
-========================================= */
+========================================================= */
 
 .insurance-item:hover {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
 
     background: #f8fbff;
 
@@ -73,133 +131,115 @@
 }
 
 
-/* =========================================
-   ICON BUTTON
-========================================= */
-/* Mobile */
-@media (max-width: 768px) {
-        .insurance-toggle {
-        justify-content: center; /* Center */
-    }
-}
-
-    .insurance-toggle i {
-        font-size: 32px;
-    }
-
-
-
-
-/* =========================================
-   ICON
-========================================= */
-
-.insurance-toggle i {
-    font-size: 90px;
-
-    transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
-}
-
-
-/* =========================================
+/* =========================================================
    ICON HOVER
-========================================= */
+========================================================= */
 
 .insurance-item:hover .insurance-toggle i {
-    transform: scale(1.2) rotate(5deg);
+    transform: scale(1.12) rotate(4deg);
 
     filter:
         drop-shadow(0 5px 8px rgba(0, 0, 0, 0.18));
 }
 
 
-/* =========================================
+/* =========================================================
    HEALTH
-========================================= */
+========================================================= */
 
 .health .insurance-toggle {
     color: #e63956;
 }
 
 
-/* =========================================
+/* =========================================================
    CAR
-========================================= */
+========================================================= */
 
 .car .insurance-toggle {
     color: #1769d2;
 }
 
 
-/* =========================================
+/* =========================================================
    BIKE
-========================================= */
+========================================================= */
 
 .bike .insurance-toggle {
     color: #159447;
 }
 
 
-/* =========================================
-   TEXT BELOW CARD
-========================================= */
+/* =========================================================
+   INSURANCE NAME
+========================================================= */
 
 .insurance-name {
     margin-top: 10px;
 
     font-size: 15px;
 
+    line-height: 20px;
+
     font-weight: 700;
 
     color: #222;
+
+    white-space: nowrap;
 }
 
 
-/* =========================================
-   PLANS + QUOTE
-   HIDDEN INITIALLY
-========================================= */
+/* =========================================================
+   INSURANCE ACTIONS
+========================================================= */
 
 .insurance-actions {
     display: none;
 
     flex-direction: column;
-
     align-items: center;
 
-    gap: 6px;
+    gap: 7px;
+
+    width: 100%;
 
     margin-top: 8px;
 }
 
 
-/* =========================================
-   SHOW WHEN CARD IS ACTIVE
-========================================= */
+/* =========================================================
+   SHOW ACTIONS WHEN ACTIVE
+========================================================= */
 
 .insurance-section.active .insurance-actions {
     display: flex;
 }
 
 
-/* =========================================
-   PLANS
-========================================= */
+/* =========================================================
+   PLANS BUTTON
+========================================================= */
 
 .plan-link {
-    text-decoration: none;
+    display: block;
+
+    width: 90px;
+
+    box-sizing: border-box;
+
+    padding: 7px 10px;
 
     background: #edf4ff;
 
     color: #1769d2;
 
-    padding: 6px 25px;
-
     border-radius: 18px;
 
+    text-decoration: none;
+
     font-size: 11px;
+
+    line-height: 14px;
 
     font-weight: 700;
 
@@ -218,22 +258,30 @@
 }
 
 
-/* =========================================
-   QUOTE
-========================================= */
+/* =========================================================
+   QUOTE BUTTON
+========================================================= */
 
 .quote-link {
-    text-decoration: none;
+    display: block;
+
+    width: 90px;
+
+    box-sizing: border-box;
+
+    padding: 7px 10px;
 
     background: #1769d2;
 
-    color: white;
-
-    padding: 6px 25px;
+    color: #fff;
 
     border-radius: 18px;
 
+    text-decoration: none;
+
     font-size: 11px;
+
+    line-height: 14px;
 
     font-weight: 700;
 
@@ -246,6 +294,8 @@
 .quote-link:hover {
     background: #0047ab;
 
+    color: #fff;
+
     transform: translateY(-2px);
 
     box-shadow:
@@ -253,33 +303,36 @@
 }
 
 
-
-
-
-
-
-
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
 
 .hero-buttons {
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
-     width: fit-content;
+    width: fit-content;
 }
 
 
-/* Get Quote */
+/* =========================================================
+   HERO GET QUOTE BUTTON
+========================================================= */
 
 .hero-buttons .btn:first-child {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     padding: 12px 24px;
 
     background: #1769d2;
-    color: white;
+
+    color: #fff;
 
     border-radius: 8px;
 
@@ -288,63 +341,215 @@
     font-weight: 600;
 
     white-space: nowrap;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
 }
 
 
-/* WhatsApp */
+/* =========================================================
+   WHATSAPP BUTTON
+========================================================= */
 
 .hero-buttons .green {
     width: 45px;
     height: 45px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
+    flex: 0 0 45px;
 
     padding: 0;
 
     background: #25D366;
-    color: white;
+
+    color: #fff;
 
     border-radius: 8px;
 
     text-decoration: none;
+
+    box-sizing: border-box;
+
+    transition: all 0.3s ease;
 }
 
 
-/* Call */
+/* =========================================================
+   CALL BUTTON
+========================================================= */
 
 .hero-buttons .call-btn {
     width: 45px;
     height: 45px;
 
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
+
+    flex: 0 0 45px;
 
     padding: 0;
 
     background: #159447;
-    color: white;
+
+    color: #fff;
 
     border-radius: 8px;
 
     text-decoration: none;
-}
 
+    box-sizing: border-box;
 
-/* Hover */
-
-.hero-buttons .btn {
     transition: all 0.3s ease;
 }
 
-.hero-buttons .btn:hover {
+
+/* =========================================================
+   HERO BUTTON HOVER
+========================================================= */
+
+.hero-buttons .btn:hover,
+.hero-buttons .green:hover,
+.hero-buttons .call-btn:hover {
     transform: translateY(-3px);
 }
 
 
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    /* Insurance */
+
+    .insurance-quick-links {
+        gap: 25px;
+    }
+
+    .insurance-section {
+        width: 110px;
+    }
+
+    .insurance-item {
+        width: 100px;
+        height: 92px;
+    }
+
+    .insurance-toggle i {
+        font-size: 38px;
+    }
+
+
+    /* Hero buttons */
+
+    .hero-buttons {
+        gap: 10px;
+    }
+
+    .hero-buttons .btn:first-child {
+        padding: 11px 20px;
+    }
+
+    .hero-buttons .green,
+    .hero-buttons .call-btn {
+        width: 44px;
+        height: 44px;
+
+        flex-basis: 44px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 600px) {
+
+    /* -----------------------------------------------------
+       INSURANCE QUICK LINKS
+    ----------------------------------------------------- */
+
+    .insurance-quick-links {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 0 10px;
+
+        margin: 0 auto;
+
+        box-sizing: border-box;
+    }
+
+
+    .insurance-section {
+        width: calc((100% - 24px) / 3);
+
+        max-width: 105px;
+
+        min-width: 0;
+    }
+
+
+    .insurance-item {
+        width: 100%;
+
+        height: 82px;
+
+        border-radius: 15px;
+    }
+
+
+    .insurance-toggle i {
+        font-size: 34px;
+    }
+
+
+    .insurance-name {
+        margin-top: 8px;
+
+        font-size: 14px;
+
+        line-height: 18px;
+    }
+
+
+    .insurance-actions {
+        margin-top: 7px;
+
+        gap: 5px;
+    }
+
+
+    .plan-link,
+    .quote-link {
+        width: 78px;
+
+        padding: 6px 8px;
+
+        font-size: 10px;
+
+        line-height: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO BUTTONS
+    ----------------------------------------------------- */
 
     .hero-buttons {
         width: 100%;
@@ -358,10 +563,15 @@
         gap: 8px;
 
         margin: 0;
+
         padding: 0;
+
+        box-sizing: border-box;
     }
 
-    /* Get Quote takes remaining space */
+
+    /* Get Quote takes remaining width */
+
     .hero-buttons .btn:first-child {
         flex: 1;
 
@@ -370,9 +580,15 @@
         padding: 12px 10px;
 
         text-align: center;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
     }
 
+
     /* WhatsApp */
+
     .hero-buttons .green {
         flex: 0 0 45px;
 
@@ -380,7 +596,9 @@
         height: 45px;
     }
 
+
     /* Call */
+
     .hero-buttons .call-btn {
         flex: 0 0 45px;
 
@@ -389,4 +607,160 @@
     }
 }
 
+
+/* =========================================================
+   VERY SMALL PHONES
+   Example: 320px - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    /* -----------------------------------------------------
+       INSURANCE
+    ----------------------------------------------------- */
+
+    .insurance-quick-links {
+        gap: 8px;
+
+        padding: 0 6px;
+    }
+
+
+    .insurance-section {
+        width: calc((100% - 16px) / 3);
+
+        max-width: 95px;
+    }
+
+
+    .insurance-item {
+        height: 72px;
+
+        border-radius: 13px;
+    }
+
+
+    .insurance-toggle i {
+        font-size: 29px;
+    }
+
+
+    .insurance-name {
+        margin-top: 7px;
+
+        font-size: 13px;
+
+        line-height: 17px;
+    }
+
+
+    .insurance-actions {
+        margin-top: 6px;
+
+        gap: 4px;
+    }
+
+
+    .plan-link,
+    .quote-link {
+        width: 70px;
+
+        padding: 5px 6px;
+
+        font-size: 9px;
+
+        line-height: 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       HERO BUTTONS
+    ----------------------------------------------------- */
+
+    .hero-buttons {
+        gap: 6px;
+    }
+
+
+    .hero-buttons .btn:first-child {
+        padding: 11px 8px;
+
+        font-size: 14px;
+    }
+
+
+    .hero-buttons .green,
+    .hero-buttons .call-btn {
+        width: 42px;
+        height: 42px;
+
+        flex: 0 0 42px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   Example: 320px and below
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .insurance-quick-links {
+        gap: 6px;
+
+        padding: 0 4px;
+    }
+
+
+    .insurance-section {
+        width: calc((100% - 12px) / 3);
+    }
+
+
+    .insurance-item {
+        height: 68px;
+    }
+
+
+    .insurance-toggle i {
+        font-size: 27px;
+    }
+
+
+    .insurance-name {
+        font-size: 12px;
+    }
+
+
+    .plan-link,
+    .quote-link {
+        width: 66px;
+
+        padding: 5px 4px;
+
+        font-size: 9px;
+    }
+
+
+    .hero-buttons {
+        gap: 5px;
+    }
+
+
+    .hero-buttons .btn:first-child {
+        font-size: 13px;
+
+        padding: 10px 6px;
+    }
+
+
+    .hero-buttons .green,
+    .hero-buttons .call-btn {
+        width: 40px;
+        height: 40px;
+
+        flex: 0 0 40px;
+    }
+}
 

@@ -1,48 +1,94 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
-background:#f7f9fc;
-color:#222;
-line-height:1.6;
+body {
+    background: #f7f9fc;
+    color: #222;
+    line-height: 1.6;
 }
 
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
+.container {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
-header{
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,.1);
-position:sticky;
-top:0;
-z-index:1000;
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.10);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-nav a:hover{
-color:#16a34a;
+
+/* =========================================================
+   HEADER MAIN LAYOUT
+   DESKTOP:
+   
+   LOGO                         NAVIGATION
+   HEALTH CAR BIKE              NAVIGATION
+   
+========================================================= */
+
+.nav {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "logo nav"
+        "insurance nav";
+    align-items: start;
+    column-gap: 20px;
+    padding: 12px 0;
 }
 
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 0;
-gap:20px;
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    grid-area: logo;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
 }
-/* ================================
+
+.logo img {
+    max-height: 80px;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* =========================================================
    NAVIGATION
-================================ */
+========================================================= */
+
+nav {
+    grid-area: nav;
+    justify-self: end;
+    align-self: center;
+}
 
 nav ul {
     display: flex;
@@ -58,34 +104,1323 @@ nav ul li {
     white-space: nowrap;
 }
 
-nav ul li a {
+nav a {
     text-decoration: none;
+    font-weight: 600;
+    color: #0a2f7a;
+    font-size: 18px;
+    transition: color 0.2s ease;
 }
 
-
-/* ================================
-   WHATSAPP + CALL BUTTONS
-================================ */
+nav a:hover {
+    color: #16a34a;
+}
 
 nav .btn {
     width: 42px;
     height: 42px;
-
+    padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
 }
 
-@media (max-width: 600px) {
+nav .btn.green {
+    background: #16a34a;
+    color: #ffffff;
+}
+
+nav .call-btn {
+    background: #0a2f7a;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   INSURANCE QUICK LINKS
+========================================================= */
+
+.insurance-quick-links {
+    grid-area: insurance;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    gap: 10px;
+
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+
+/* =========================================================
+   INSURANCE INDIVIDUAL SECTION
+========================================================= */
+
+.insurance-section {
+    width: 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   INSURANCE ICON BOX
+========================================================= */
+
+.insurance-item {
+    width: 62px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.insurance-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   INSURANCE BUTTON
+========================================================= */
+
+.insurance-toggle {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.insurance-toggle i {
+    font-size: 25px;
+}
+
+
+/* =========================================================
+   INSURANCE COLORS
+========================================================= */
+
+.health .insurance-toggle {
+    color: #e63956;
+}
+
+.car .insurance-toggle {
+    color: #1769d2;
+}
+
+.bike .insurance-toggle {
+    color: #159447;
+}
+
+
+/* =========================================================
+   INSURANCE NAME
+========================================================= */
+
+.insurance-name {
+    margin-top: 4px;
+
+    font-size: 11px;
+    line-height: 15px;
+
+    font-weight: 700;
+
+    color: #222;
+}
+
+
+/* =========================================================
+   INSURANCE ACTION BUTTONS
+   Hidden until icon is clicked
+========================================================= */
+
+.insurance-actions {
+    display: none;
+
+    flex-direction: column;
+    align-items: center;
+
+    gap: 4px;
+
+    margin-top: 5px;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   ACTIVE INSURANCE
+========================================================= */
+
+.insurance-section.active .insurance-actions {
+    display: flex;
+}
+
+
+/* =========================================================
+   INSURANCE PLAN / QUOTE LINKS
+========================================================= */
+
+.plan-link,
+.quote-link {
+    display: block;
+
+    width: 60px;
+
+    padding: 4px 5px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 9px;
+    line-height: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.plan-link:hover,
+.quote-link:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.plan-link {
+    background: #edf4ff;
+    color: #1769d2;
+}
+
+.quote-link {
+    background: #1769d2;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   COMMON BUTTON
+========================================================= */
+
+.btn {
+    display: inline-block;
+
+    background: #0a2f7a;
+    color: #ffffff;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10, 47, 122, 0.20);
+}
+
+.btn.green {
+    background: #16a34a;
+}
+
+.call-box {
+    background: #16a34a;
+    color: #ffffff;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 1.2fr)
+        minmax(320px, 0.8fr);
+
+    align-items: start;
+
+    padding: 70px 8%;
+
+    gap: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4f8ff 0%,
+            #eef7f0 100%
+        );
+
+    border-radius: 0 0 30px 30px;
+}
+
+.hero-left {
+    max-width: 650px;
+    transform: translateY(-12px);
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    background: #e7f6eb;
+    color: #16a34a;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 56px;
+
+    color: #0a2f7a;
+
+    line-height: 1.1;
+}
+
+.hero span {
+    color: #16a34a;
+}
+
+.hero p {
+    margin: 20px 0;
+
+    font-size: 18px;
+}
+
+.hero-right img {
+    width: 100%;
+    max-width: 520px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 18px 40px rgba(10, 47, 122, 0.08);
+
+    display: block;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.hero-buttons .fa-whatsapp {
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   TRUST SECTION
+========================================================= */
+
+.trust-section {
+    padding: 50px 8%;
+    background: #eef4ff;
+}
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+}
+
+.trust-card {
+    background: #ffffff;
+
+    padding: 24px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(10, 47, 122, 0.08);
+
+    text-align: center;
+
+    min-height: 170px;
+}
+
+.trust-card span {
+    font-size: 24px;
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+}
+
+.trust-card h3 {
+    margin: 0 0 10px;
+
+    color: #0a2f7a;
+
+    font-size: 18px;
+}
+
+.trust-card p {
+    color: #444;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+    padding: 70px 8%;
+}
+
+.services h2 {
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    color: #0a2f7a;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+}
+
+.card {
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card h3 {
+    color: #16a34a;
+
+    margin-bottom: 20px;
+}
+
+.card li {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
+.benefits-list {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+.benefits-list li {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 12px;
+}
+
+.benefits-list img {
+    width: 26px;
+    height: 26px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   WHY US
+========================================================= */
+
+.why-us {
+    padding: 70px 8%;
+
+    background: #eef4ff;
+}
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.why-grid > div {
+    background: #ffffff;
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 24px rgba(10, 47, 122, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.why-grid > div::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(22, 163, 74, 0.12),
+            transparent 60%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+.why-grid > div:hover::before {
+    opacity: 1;
+}
+
+.why-grid h4 {
+    color: #0a2f7a;
+
+    margin-bottom: 8px;
+}
+
+.why-grid p {
+    color: #555;
+}
+
+.why-title {
+    text-align: center;
+
+    margin: 50px 0 30px;
+
+    color: #003366;
+}
+
+
+/* =========================================================
+   COMMON HOVER
+========================================================= */
+
+.feature:hover,
+.card:hover,
+.contact-box:hover,
+.why-grid > div:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   SECTION TITLES
+========================================================= */
+
+.services h2,
+.contact-section h2,
+.why-us h2 {
+    position: relative;
+
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 8px;
+}
+
+.services h2::after,
+.contact-section h2::after,
+.why-us h2::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 60px;
+    height: 3px;
+
+    background: #16a34a;
+
+    border-radius: 999px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    padding: 70px 8%;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 380px;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+.contact-box {
+    background: #ffffff;
+
+    padding: 22px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 30px rgba(9, 30, 66, 0.04);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   ADDRESS BOX
+========================================================= */
+
+.address-box {
+    overflow: hidden;
+
+    position: relative;
+
+    animation: cardEntrance 0.6s ease both;
+}
+
+.address-box address {
+    display: block;
+
+    font-style: normal;
+
+    color: #111827;
+
+    line-height: 1.9;
+
+    font-size: 16px;
+
+    margin-top: 8px;
+}
+
+.address-actions {
+    margin-top: 18px;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   OUTLINE BUTTON
+========================================================= */
+
+.btn.outline {
+    background: transparent;
+
+    color: #0a2f7a;
+
+    border: 1.25px solid rgba(10, 47, 122, 0.12);
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition:
+        background 0.18s ease,
+        transform 0.12s ease;
+}
+
+.btn.outline:hover {
+    background: rgba(10, 47, 122, 0.04);
+
+    transform: translateY(-2px);
+}
+
+.btn.outline svg {
+    flex: 0 0 18px;
+}
+
+.copied {
+    background: #16a34a !important;
+
+    color: #ffffff !important;
+
+    border-color: transparent !important;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+input,
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    margin-top: 8px;
+
+    border: 1px solid #dbe4f0;
+
+    border-radius: 8px;
+
+    background: #fdfefe;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+
+    border-color: #0a2f7a;
+
+    box-shadow:
+        0 0 0 3px rgba(10, 47, 122, 0.12);
+}
+
+label {
+    display: block;
+
+    color: #173a5a;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+========================================================= */
+
+.btn.primary {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0a2f7a,
+            #0a3f9a
+        );
+
+    color: #ffffff;
+
+    padding: 12px 18px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 10px 30px rgba(10, 47, 122, 0.12);
+
+    border: 0;
+}
+
+.btn.primary svg {
+    transform: translateX(0);
+
+    transition:
+        transform 0.18s ease;
+}
+
+.btn.primary:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-content {
+    max-width: 900px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #555;
+
+    margin-bottom: 20px;
+}
+
+.about-content blockquote {
+    margin: 35px auto;
+
+    padding: 20px;
+
+    max-width: 700px;
+
+    border-left: 5px solid #28a745;
+
+    background: #f8f9fa;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    color: #333;
+}
+
+
+/* =========================================================
+   DYNAMIC QUOTE
+========================================================= */
+
+.dynamic-quote {
+    overflow: hidden;
+
+    position: relative;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.dynamic-quote::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(22, 163, 74, 0.12),
+            transparent
+        );
+
+    transform: translateX(-100%);
+
+    animation: shine 3s infinite;
+}
+
+.quote-text {
+    display: inline-block;
+
+    animation:
+        fadeSlide 2.5s ease-in-out infinite alternate;
+}
+
+
+/* =========================================================
+   QUOTE FORM
+========================================================= */
+
+#quoteForm {
+    width: 100%;
+}
+
+#quoteForm label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 6px;
+
+    color: #333;
+}
+
+#quoteForm input,
+#quoteForm select,
+#quoteForm textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dcdcdc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: all 0.3s ease;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+}
+
+#quoteForm input:focus,
+#quoteForm select:focus,
+#quoteForm textarea:focus {
+    border-color: #0d6efd;
+
+    box-shadow:
+        0 0 6px rgba(13, 110, 253, 0.20);
+}
+
+#quoteForm input::placeholder,
+#quoteForm textarea::placeholder {
+    color: #999;
+}
+
+#healthFields,
+#vehicleFields {
+    margin-top: 15px;
+
+    padding: 15px;
+
+    background: #f8f9fa;
+
+    border-radius: 10px;
+
+    border: 1px solid #e9ecef;
+}
+
+#ageFields {
+    margin-bottom: 15px;
+}
+
+#healthFields label input[type="checkbox"] {
+    width: auto;
+
+    margin-right: 6px;
+}
+
+#healthFields label {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-right: 15px;
+
+    margin-bottom: 10px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+#quoteForm button[type="submit"] {
+    width: 100%;
+
+    border: none;
+
+    background: #0d6efd;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#quoteForm button[type="submit"]:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.95;
+}
+
+#quoteForm input,
+#quoteForm select {
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #0a2f7a;
+
+    color: #ffffff;
+
+    padding: 30px;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.whatsapp {
+    position: fixed;
+
+    bottom: 20px;
+    right: 20px;
+
+    background: #16a34a;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+
+    text-decoration: none;
+
+    color: #ffffff;
+
+    z-index: 999;
+}
+
+.btn.green i {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes cardEntrance {
+
+    from {
+        transform: translateY(8px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes shine {
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fadeSlide {
+
+    from {
+        opacity: 0.8;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+}
+
+
+/* =========================================================
+   LARGE LAPTOP / TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    nav a {
+        font-size: 16px;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .nav {
+        column-gap: 15px;
+    }
+
+    nav ul {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 15px;
+    }
+
+    nav .btn {
+        width: 38px;
+        height: 38px;
+    }
+
+    .logo img {
+        max-height: 70px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        padding: 55px 6%;
+    }
+
+    .hero-left {
+        max-width: 800px;
+
+        margin: 0 auto;
+
+        transform: none;
+    }
+
+    .hero-right {
+        margin-top: 10px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .address-actions {
+        justify-content: flex-start;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ORDER:
+
+   LOGO
+
+   HOME ABOUT SERVICES GET QUOTE WHATSAPP CALL
+
+   HEALTH CAR BIKE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------
+       HEADER
+    ----------------------------------------- */
+
+    .nav {
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 10px;
+
+        padding: 10px 0 12px;
+    }
+
+
+    /* -----------------------------------------
+       LOGO
+    ----------------------------------------- */
+
+    .logo {
+        order: 1;
+
+        justify-content: center;
+
+        width: 100%;
+    }
+
+    .logo img {
+        max-height: 72px;
+
+        max-width: 90%;
+    }
+
+
+    /* -----------------------------------------
+       NAVIGATION
+    ----------------------------------------- */
+
+    nav {
+        order: 2;
+
+        width: 100%;
+
+        margin: 0;
+
+        justify-self: auto;
+
+        align-self: auto;
+    }
 
     nav ul {
         display: flex;
+
         flex-wrap: wrap;
+
         justify-content: center;
-        gap: 10px 15px;
-        padding: 8px;
+
+        align-items: center;
+
+        gap: 8px 14px;
+
+        width: 100%;
+
+        padding: 4px 5px;
+    }
+
+    nav ul li {
+        white-space: nowrap;
     }
 
     nav ul li a {
@@ -96,1102 +1431,344 @@ nav .btn {
         width: 32px;
         height: 32px;
     }
-}
-.logo{
-flex:0 1 auto;
-display:flex;
-align-items:center;
-}
 
-.logo img{
-max-height:80px;
-width:auto;
-max-width:100%;
-height:auto;
-display:block;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-gap:25px;
-}
-
-nav a {
-    text-decoration: none;
-    font-weight: 600;
-    color: #0a2f7a;
-    font-size: 18px;
-}
-.call-box{
-background:#16a34a;
-color:white;
-padding:12px 20px;
-border-radius:10px;
-font-weight:bold;
-}
-
-.hero{
-display:grid;
-grid-template-columns:minmax(320px, 1.2fr) minmax(320px, 0.8fr);
-align-items:start;
-padding:70px 8%;
-gap:40px;
-background:linear-gradient(135deg, #f4f8ff 0%, #eef7f0 100%);
-border-radius:0 0 30px 30px;
-}
-
-.hero-left{
-max-width:650px;
-transform: translateY(-12px);
-}
-
-.hero-right{
-display:flex;
-justify-content:center;
-align-items:center;
-}
-
-.hero-badge{
-display:inline-block;
-background:#e7f6eb;
-color:#16a34a;
-padding:8px 14px;
-border-radius:999px;
-font-size:14px;
-font-weight:600;
-margin-bottom:15px;
-}
-
-.hero h1{
-font-size:56px;
-color:#0a2f7a;
-line-height:1.1;
-}
-
-.hero span{
-color:#16a34a;
-}
-
-.hero p{
-margin:20px 0;
-font-size:18px;
-}
-
-.hero-right img{
-width:100%;
-max-width:520px;
-border-radius:20px;
-box-shadow:0 18px 40px rgba(10,47,122,.08);
-display:block;
-}
-
-.hero-buttons{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-margin-top:20px;
-}
-
-.btn{
-display:inline-block;
-background:#0a2f7a;
-color:white;
-padding:12px 25px;
-border-radius:8px;
-text-decoration:none;
-transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-box-shadow:0 8px 20px rgba(10,47,122,.2);
-}
-
-.green{
-background:#16a34a;
-}
-
-.trust-section{
-padding:50px 8%;
-background:#eef4ff;
-}
-
-.trust-grid{
-    display:grid;
-    grid-template-columns:repeat(5, 1fr);
-    gap:18px;
-}
-
-@media (max-width:768px){
-    .trust-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media (max-width:480px){
-    .trust-grid{
-        grid-template-columns:1fr;
-    }
-}
-@media (max-width: 768px) {
-    nav a {
-        font-size: 22px;
-    }
-
-    nav ul {
-        gap: 15px;
-    }
-}
-.hero-buttons .fa-whatsapp {
-    font-size: 24px;
-}
-.trust-card{
-background:white;
-padding:24px;
-border-radius:18px;
-box-shadow:0 12px 35px rgba(10,47,122,.08);
-text-align:center;
-min-height:170px;
-}
-
-.trust-card span{
-font-size:24px;
-display:inline-block;
-margin-bottom:10px;
-}
-
-.trust-card h3{
-margin:0 0 10px;
-color:#0a2f7a;
-font-size:18px;
-}
-
-.trust-card p{
-color:#444;
-line-height:1.6;
-font-size:14px;
-}
-
-
-.feature:hover,
-.card:hover,
-.contact-box:hover,
-.why-grid > div:hover{
-transform:translateY(-4px);
-box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
-
-.services{
-padding:70px 8%;
-}
-
-.services h2{
-text-align:center;
-margin-bottom:40px;
-color:#0a2f7a;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-transition:transform .2s ease, box-shadow .2s ease;
-}
-
-.card h3{
-color:#16a34a;
-margin-bottom:20px;
-}
-
-.card li{
-margin-bottom:12px;
-}
-
-.benefits-list{
-list-style:none;
-padding:0;
-margin:0;
-}
-
-.benefits-list li{
-display:flex;
-align-items:center;
-gap:12px;
-margin-bottom:12px;
-}
-
-.benefits-list img{
-width:26px;
-height:26px;
-object-fit:contain;
-flex-shrink:0;
-}
-
-.why-us{
-padding:70px 8%;
-background:#eef4ff;
-}
-
-.services h2,
-.contact-section h2,
-.why-us h2{
-position:relative;
-display:inline-block;
-margin-bottom:25px;
-padding-bottom:8px;
-}
-
-.services h2::after,
-.contact-section h2::after,
-.why-us h2::after{
-content:'';
-position:absolute;
-left:0;
-bottom:0;
-width:60px;
-height:3px;
-background:#16a34a;
-border-radius:999px;
-}
-
-.why-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:25px;
-margin-top:30px;
-}
-
-.why-grid > div{
-background:white;
-padding:24px;
-border-radius:16px;
-box-shadow:0 8px 24px rgba(10,47,122,.08);
-transition:transform .25s ease, box-shadow .25s ease;
-position:relative;
-overflow:hidden;
-}
-
-.why-grid > div::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(135deg, rgba(22,163,74,.12), transparent 60%);
-opacity:0;
-transition:opacity .25s ease;
-}
-
-.why-grid > div:hover::before{
-opacity:1;
-}
-
-.why-grid h4{
-color:#0a2f7a;
-margin-bottom:8px;
-}
-
-.why-grid p{
-color:#555;
-}
-
-.contact-section{
-padding:70px 8%;
-}
-
-.contact-grid{
-    display:grid;
-    grid-template-columns: 1fr 380px; /* form + sidebar */
-    gap:30px;
-    align-items:start;
-}
-
-.contact-box{
-    background:white;
-    padding:22px;
-    border-radius:14px;
-    box-shadow:0 8px 30px rgba(9,30,66,.04);
-    transition:transform .2s ease, box-shadow .2s ease;
-}
-
-/* Address card enhancements */
-.address-box{
-    overflow:hidden;
-    position:relative;
-    animation:cardEntrance .6s ease both;
-}
-
-.address-box address{
-    display:block;
-    font-style:normal;
-    color:#111827;
-    line-height:1.9;
-    font-size:16px;
-    margin-top:8px;
-}
-
-.address-actions{
-    margin-top:18px;
-    display:flex;
-    gap:12px;
-}
-
-.btn.outline{
-    background:transparent;
-    color:#0a2f7a;
-    border:1.25px solid rgba(10,47,122,.12);
-    padding:10px 14px;
-    border-radius:10px;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:background .18s ease, transform .12s ease;
-}
-
-.btn.outline:hover{ background:rgba(10,47,122,.04); transform:translateY(-2px); }
-
-.btn.outline svg{ flex:0 0 18px; }
-
-@keyframes cardEntrance{
-    from{ transform:translateY(8px); opacity:0; }
-    to{ transform:translateY(0); opacity:1; }
-}
-
-/* temporary feedback state for copy */
-.copied{ background:#16a34a !important; color:#fff !important; border-color:transparent !important; }
-
-/* Form controls styling */
-input, select, button{ font:inherit; }
-
-input, select{
-    width:100%;
-    padding:14px 16px;
-    margin-top:8px;
-    border:1px solid #e6edf6;
-    border-radius:10px;
-    background:#fff;
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.6);
-    transition:box-shadow .18s ease, border-color .18s ease, transform .12s ease;
-}
-
-input::placeholder{ color:#bfcbd9; }
-
-input:focus, select:focus{
-    outline:none;
-    border-color:#0a2f7a;
-    box-shadow:0 8px 24px rgba(10,47,122,.06);
-    transform:translateY(-2px);
-}
-
-label{ display:block; color:#173a5a; margin-bottom:8px; font-weight:600; }
-
-/* Primary submit button */
-.btn.primary{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    background:linear-gradient(90deg,#0a2f7a,#0a3f9a);
-    color:#fff;
-    padding:12px 18px;
-    border-radius:12px;
-    box-shadow:0 10px 30px rgba(10,47,122,.12);
-    border:0;
-}
-
-.btn.primary svg{ transform:translateX(0); transition:transform .18s ease; }
-.btn.primary:hover svg{ transform:translateX(4px); }
-
-@media(max-width:900px){
-    .contact-grid{ grid-template-columns:1fr; }
-    .address-actions{ justify-content:flex-start; }
-}
-
-input,
-select,
-button{
-font:inherit;
-}
-
-input,
-select{
-width:100%;
-padding:12px 14px;
-margin-top:8px;
-border:1px solid #dbe4f0;
-border-radius:8px;
-background:#fdfefe;
-}
-
-input:focus,
-select:focus{
-outline:none;
-border-color:#0a2f7a;
-box-shadow:0 0 0 3px rgba(10,47,122,.12);
-}
-
-footer{
-background:#0a2f7a;
-color:white;
-padding:30px;
-}
-
-.footer-content{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#16a34a;
-width:60px;
-height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-color:white;
-}
-
-@media(max-width:768px){
-
-.hero,
-.service-grid,
-.contact-grid,
-.why-grid,
-.features{
-grid-template-columns:1fr;
-}
-
-.nav{
-flex-direction:column;
-gap:15px;
-}
-
-.hero h1{
-font-size:36px;
-}
-
-.footer-content{
-flex-direction:column;
-gap:15px;
-}
-}
-.about-content{
-    max-width:900px;
-    margin:0 auto 50px;
-    text-align:center;
-}
-
-.about-content p{
-    font-size:17px;
-    line-height:1.9;
-    color:#555;
-    margin-bottom:20px;
-}
-
-.about-content blockquote{
-    margin:35px auto;
-    padding:20px;
-    max-width:700px;
-    border-left:5px solid #28a745;
-    background:#f8f9fa;
-    font-size:20px;
-    font-style:italic;
-    color:#333;
-}
-
-.dynamic-quote{
-    overflow:hidden;
-    position:relative;
-    border-radius:12px;
-    box-shadow:0 6px 20px rgba(0,0,0,.06);
-}
-
-.dynamic-quote::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(90deg, transparent, rgba(22,163,74,.12), transparent);
-    transform:translateX(-100%);
-    animation:shine 3s infinite;
-}
-
-.quote-text{
-    display:inline-block;
-    animation:fadeSlide 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes shine {
-    100% { transform:translateX(100%); }
-}
-
-@keyframes fadeSlide {
-    from { opacity:.8; transform:translateY(2px); }
-    to { opacity:1; transform:translateY(-2px); }
-}
-
-.why-title{
-    text-align:center;
-    margin:50px 0 30px;
-    color:#003366;
-}
-.btn.green i {
-    font-size: 22px;
-}
-/* Form Container */
-#quoteForm {
-    width: 100%;
-}
-
-/* Labels */
-#quoteForm label {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 6px;
-    color: #333;
-}
-
-/* Inputs & Selects */
-#quoteForm input,
-#quoteForm select,
-#quoteForm textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border: 1px solid #dcdcdc;
-    border-radius: 8px;
-    font-size: 15px;
-    outline: none;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-    background: #fff;
-}
-
-/* Focus Effect */
-#quoteForm input:focus,
-#quoteForm select:focus,
-#quoteForm textarea:focus {
-    border-color: #0d6efd;
-    box-shadow: 0 0 6px rgba(13, 110, 253, 0.2);
-}
-
-/* Placeholder */
-#quoteForm input::placeholder,
-#quoteForm textarea::placeholder {
-    color: #999;
-}
-
-/* Health & Vehicle Sections */
-#healthFields,
-#vehicleFields {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f8f9fa;
-    border-radius: 10px;
-    border: 1px solid #e9ecef;
-}
-
-/* Dynamic Age Fields */
-#ageFields {
-    margin-bottom: 15px;
-}
-
-/* Checkbox Group */
-#healthFields label input[type="checkbox"] {
-    width: auto;
-    margin-right: 6px;
-}
-
-#healthFields label {
-    display: inline-flex;
-    align-items: center;
-    margin-right: 15px;
-    margin-bottom: 10px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-/* Submit Button */
-#quoteForm button[type="submit"] {
-    width: 100%;
-    border: none;
-    background: #0d6efd;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#quoteForm button[type="submit"]:hover {
-    transform: translateY(-2px);
-    opacity: 0.95;
-}
-
-/* Spacing */
-#quoteForm input,
-#quoteForm select {
-    margin-bottom: 15px;
-}
-
-/* Tablet */
-@media (max-width: 992px) {
-
-    #quoteForm input,
-    #quoteForm select {
-        font-size: 14px;
-        padding: 11px;
-    }
-
-    #quoteForm button[type="submit"] {
-        padding: 13px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-
-    #quoteForm label {
-        font-size: 13px;
-    }
-
-    #quoteForm input,
-    #quoteForm select {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    #healthFields label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #quoteForm button[type="submit"] {
+    nav .btn i {
         font-size: 15px;
-        padding: 12px;
-    }
-}
-
-/* Small Mobile */
-@media (max-width: 480px) {
-
-    #healthFields,
-    #vehicleFields {
-        padding: 12px;
     }
 
-    #quoteForm input,
-    #quoteForm select {
-        font-size: 13px;
-        padding: 10px;
-    }
 
-    #quoteForm button[type="submit"] {
-        font-size: 14px;
-        padding: 12px;
-    }
-}
-.hero-buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.call-btn{
-    background:#0d6efd;
-    color:#fff;
-    min-width:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-decoration:none;
-}
-
-.call-btn:hover{
-    opacity:0.9;
-    transform:translateY(-2px);
-}
-
-.insurance-quick-links {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-
-    margin-top: 25px;
-    margin-left: 150px;   /* move further right */
-    margin-bottom: 20px;
-
-    flex-wrap: wrap;
-}
-
-
-/* Each insurance option */
-
-.insurance-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 130px;
-
-    padding: 15px 12px;
-
-    background: #fff;
-
-    border-radius: 18px;
-
-    border: 1px solid #edf0f5;
-
-    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.10);
-
-    position: relative;
-    overflow: hidden;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        border-color 0.3s ease,
-        background 0.3s ease;
-}
-
-/* =========================================
-   CARD HOVER EFFECT
-========================================= */
-
-.insurance-item:hover {
-    transform: translateY(-8px);
-
-    border-color: #1769d2;
-
-    background: #f8fbff;
-
-    box-shadow:
-        0 12px 28px rgba(23, 105, 210, 0.20);
-}
-
-
-
-
-/* =========================================
-   INSURANCE ICON BUTTON
-========================================= */
-/* Icon */
-.insurance-toggle {
-    width: 30px;
-    height: 30px;
-
-    border: none;
-    background: transparent;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 35px;
-
-    color: #2563eb;
-    cursor: pointer;
-}
-
-
-
-/* =========================================
-   ICON HOVER
-========================================= */
-
-.insurance-item:hover .insurance-toggle {
-    transform: scale(1.05);
-}
-
-
-
-/* =========================================
-   HEALTH
-========================================= */
-
-.insurance-item:nth-child(1) .insurance-toggle {
-    color: #e63956;
-}
-
-
-/* =========================================
-   CAR
-========================================= */
-
-.insurance-item:nth-child(2) .insurance-toggle {
-    color: #1769d2;
-}
-
-
-/* =========================================
-   BIKE
-========================================= */
-
-.insurance-item:nth-child(3) .insurance-toggle {
-    color: #159447;
-}
-
-
-/* =========================================
-   ACTION BUTTONS
-========================================= */
-
-.insurance-actions {
-    display: none;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 6px;
-
-    margin-top: 8px;
-
-    position: relative;
-    z-index: 2;
-}
-
-
-/* =========================================
-   PLANS
-========================================= */
-
-.plan-link {
-    text-decoration: none;
-
-    background: #edf4ff;
-
-    color: #1769d2;
-
-    padding: 6px 25px;
-
-    border-radius: 18px;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    text-align: center;
-
-    transition: all 0.25s ease;
-}
-
-.plan-link:hover {
-    background: #1769d2;
-
-    color: #fff;
-
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
-   QUOTE
-========================================= */
-
-.quote-link {
-    text-decoration: none;
-
-    background: #1769d2;
-
-    color: white;
-
-    padding: 6px 25px;
-
-    border-radius: 18px;
-
-    font-size: 11px;
-
-    font-weight: 700;
-
-    text-align: center;
-
-    transition: all 0.25s ease;
-}
-
-.quote-link:hover {
-    background: #0047ab;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 5px 12px rgba(23, 105, 210, 0.25);
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 600px) {
+    /* -----------------------------------------
+       INSURANCE
+       Comes AFTER NAVIGATION
+    ----------------------------------------- */
 
     .insurance-quick-links {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+        order: 3;
+
+        width: 100%;
 
         justify-content: center;
-        align-items: stretch;
 
-        gap: 8px;
+        align-items: flex-start;
 
-        margin: 20px 8px;
-        width: auto;
+        gap: 12px;
+
+        margin: 2px 0 0;
+    }
+
+    .insurance-section {
+        width: 68px;
     }
 
     .insurance-item {
-        flex: 1 1 0;
-
-        width: auto;
-        min-width: 0;
-        max-width: none;
-
-        min-height: 125px;
-
-        margin: 0;
-        padding: 12px 4px;
-
-        border-radius: 14px;
+        width: 58px;
+        height: 52px;
     }
 
-   
-    .insurance-actions {
-        gap: 4px;
-        margin-top: 5px;
+    .insurance-toggle i {
+        font-size: 23px;
+    }
+
+    .insurance-name {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------
+       HERO
+    ----------------------------------------- */
+
+    .hero {
+        padding: 45px 6%;
+
+        gap: 30px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------
+       TRUST
+    ----------------------------------------- */
+
+    .trust-section {
+        padding: 45px 6%;
+    }
+
+    .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* -----------------------------------------
+       SERVICES
+    ----------------------------------------- */
+
+    .services {
+        padding: 55px 6%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* -----------------------------------------
+       WHY US
+    ----------------------------------------- */
+
+    .why-us {
+        padding: 55px 6%;
+    }
+
+    .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 18px;
+    }
+
+
+    /* -----------------------------------------
+       CONTACT
+    ----------------------------------------- */
+
+    .contact-section {
+        padding: 55px 6%;
+    }
+
+
+    /* -----------------------------------------
+       FOOTER
+    ----------------------------------------- */
+
+    .footer-content {
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .logo img {
+        max-height: 65px;
+    }
+
+    nav ul {
+        gap: 7px 12px;
+
+        padding: 5px;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+
+    nav .btn {
+        width: 31px;
+        height: 31px;
+    }
+
+    .insurance-quick-links {
+        gap: 10px;
+    }
+
+    .insurance-section {
+        width: 64px;
+    }
+
+    .insurance-item {
+        width: 55px;
+        height: 50px;
+    }
+
+    .insurance-toggle i {
+        font-size: 22px;
+    }
+
+    .insurance-name {
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 40px 5%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        text-align: center;
+    }
+
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .address-actions {
+        flex-wrap: wrap;
+    }
+
+    .whatsapp {
+        width: 52px;
+        height: 52px;
+
+        bottom: 15px;
+        right: 15px;
+
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .logo img {
+        max-height: 60px;
+    }
+
+    nav ul {
+        gap: 6px 9px;
+    }
+
+    nav ul li a {
+        font-size: 11px;
+    }
+
+    nav .btn {
+        width: 29px;
+        height: 29px;
+    }
+
+    nav .btn i {
+        font-size: 13px;
+    }
+
+    .insurance-quick-links {
+        gap: 8px;
+    }
+
+    .insurance-section {
+        width: 60px;
+    }
+
+    .insurance-item {
+        width: 52px;
+        height: 47px;
+    }
+
+    .insurance-toggle i {
+        font-size: 20px;
+    }
+
+    .insurance-name {
+        font-size: 9px;
     }
 
     .plan-link,
     .quote-link {
-        padding: 5px 12px;
-        font-size: 10px;
+        width: 56px;
+
+        font-size: 8px;
+
+        padding: 3px 4px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .about-content blockquote {
+        font-size: 17px;
     }
 }
 
 
+/* =========================================================
+   EXTRA SMALL PHONES
+========================================================= */
 
+@media (max-width: 360px) {
 
-.insurance-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-}
+    nav ul {
+        gap: 5px 7px;
+    }
 
-.insurance-section {
-    text-align: center;
-}
+    nav ul li a {
+        font-size: 10px;
+    }
 
+    nav .btn {
+        width: 27px;
+        height: 27px;
+    }
 
-/* Card */
+    nav .btn i {
+        font-size: 12px;
+    }
 
-.insurance-item {
-    width: 110px;
-    height: 110px;
+    .insurance-quick-links {
+        gap: 5px;
+    }
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .insurance-section {
+        width: 57px;
+    }
 
-    background: white;
+    .insurance-item {
+        width: 49px;
+        height: 45px;
+    }
 
-    border: 1px solid #ddd;
-    border-radius: 15px;
+    .insurance-toggle i {
+        font-size: 19px;
+    }
 
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-
-/* Hover effect */
-
-.insurance-item:hover {
-    transform: translateY(-6px);
-
-    background: #eef6ff;
-
-    border-color: #2563eb;
-
-    box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-}
-
-
-
-/* Text BELOW the card */
-
-.insurance-name {
-    margin-top: 10px;
-
-    font-size: 17px;
-    font-weight: 600;
-
-    color: #222;
-}
-
-
-/* Plans + Quote hidden initially */
-
-.insurance-actions {
-    display: none;
-
-    justify-content: center;
-
-    gap: 8px;
-
-    margin-top: 10px;
-}
-
-
-/* Show after clicking */
-
-.insurance-section.active .insurance-actions {
-    display: flex;
-}
-
-
-/* Buttons */
-
-.insurance-actions button {
-    border: none;
-
-    padding: 6px 12px;
-
-    border-radius: 6px;
-
-    font-size: 12px;
-
-    cursor: pointer;
-}
-
-
-/* Plans */
-
-.plan-btn {
-    background: #dbeafe;
-    color: #1d4ed8;
-}
-
-
-/* Quote */
-
-.quote-btn {
-    background: #dcfce7;
-    color: #15803d;
+    .insurance-name {
+        font-size: 9px;
+    }
 }

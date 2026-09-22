@@ -175,8 +175,8 @@ nav .call-btn {
 ========================================================= */
 
 .insurance-item {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
 
     display: flex;
     align-items: center;
@@ -223,7 +223,7 @@ nav .call-btn {
 }
 
 .insurance-toggle i {
-    font-size: 25px;
+    font-size: 48px;
 }
 
 
@@ -1469,12 +1469,12 @@ footer {
     }
 
     .insurance-item {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
     }
 
     .insurance-toggle i {
-        font-size: 23px;
+        font-size: 30px;
     }
 
     .insurance-name {
@@ -1603,12 +1603,12 @@ footer {
     }
 
     .insurance-item {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
     }
 
     .insurance-toggle i {
-        font-size: 22px;
+        font-size: 30px;
     }
 
     .insurance-name {
@@ -1701,12 +1701,12 @@ footer {
     }
 
     .insurance-item {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
     }
 
     .insurance-toggle i {
-        font-size: 20px;
+        font-size: 33px;
     }
 
     .insurance-name {
@@ -1768,12 +1768,12 @@ footer {
     }
 
     .insurance-item {
-        width: 49px;
-        height: 45px;
+        width: 55px;
+        height: 55px;
     }
 
     .insurance-toggle i {
-        font-size: 19px;
+        font-size: 33px;
     }
 
     .insurance-name {

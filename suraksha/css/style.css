@@ -1789,4 +1789,7 @@ footer {
         box-sizing: border-box;
         margin: 0 auto;
     }
+    .insurance-section.commercial .insurance-toggle i {
+    color:darkblue;
+}
 }

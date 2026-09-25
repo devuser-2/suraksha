@@ -764,6 +764,76 @@ line-height: 1.7;
         </a>
 
     </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const overlay = document.getElementById("carInfoOverlay");
+    const closeBtn = document.getElementById("carInfoClose");
+
+    const title = document.getElementById("carInfoTitle");
+    const text = document.getElementById("carInfoText");
+
+    const infoButtons = document.querySelectorAll(".car-info-btn");
+
+
+    /* Open popup */
+
+    infoButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            title.textContent = button.dataset.title;
+            text.textContent = button.dataset.details;
+
+            overlay.classList.add("show");
+
+        });
+
+    });
+
+
+    /* Close button */
+
+    closeBtn.addEventListener("click", function () {
+
+        overlay.classList.remove("show");
+
+    });
+
+
+    /* Click outside modal */
+
+    overlay.addEventListener("click", function (event) {
+
+        if (event.target === overlay) {
+
+            overlay.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* ESC key */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            overlay.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
  <footer class="car-footer">
     © 2026 All Rights Reserved.
 </footer>

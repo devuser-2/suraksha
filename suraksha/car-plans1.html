@@ -1,0 +1,880 @@
+<style>
+    /* =========================================
+   CAR INSURANCE PAGE
+========================================= */
+
+.car-insurance-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 25px 60px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.car-hero {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: linear-gradient(
+        135deg,
+        #f1f7ff,
+        #ffffff
+    );
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 35px;
+}
+
+.car-hero-icon {
+    min-width: 85px;
+    height: 85px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 22px;
+
+    background: #1769d2;
+    color: white;
+
+    font-size: 40px;
+
+    box-shadow: 0 8px 20px rgba(23, 105, 210, 0.25);
+}
+
+.car-tag {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: #e5f0ff;
+    color: #1769d2;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.car-hero h1 {
+    margin: 8px 0;
+
+    font-size: 32px;
+
+    color: #172033;
+}
+
+.car-hero p {
+    margin: 0;
+
+    color: #657084;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.car-benefits-section {
+    margin-bottom: 35px;
+}
+
+.car-benefits-section h2 {
+    text-align: center;
+
+    margin-bottom: 22px;
+
+    font-size: 25px;
+
+    color: #172033;
+}
+
+.car-benefits-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 14px;
+}
+
+.car-benefit {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 17px;
+
+    background: white;
+
+    border: 1px solid #edf0f5;
+
+    border-radius: 14px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+    transition: all 0.25s ease;
+}
+
+.car-benefit:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.10);
+
+    border-color: #d8e7fb;
+}
+
+.car-benefit i {
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #edf4ff;
+
+    color: #1769d2;
+
+    font-size: 17px;
+}
+
+.car-benefit span {
+    font-size: 14px;
+
+    font-weight: 650;
+
+    color: #30394a;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.car-action-section {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Common button */
+
+.car-action-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: 125px;
+
+    padding: 11px 18px;
+
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: all 0.25s ease;
+
+    border: none;
+}
+
+.car-action-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.14);
+}
+
+.car-action-btn i {
+    font-size: 16px;
+}
+
+
+/* Get Plans */
+
+.car-plans-btn {
+    background: #edf4ff;
+
+    color: #1769d2;
+}
+
+
+/* Get Quote */
+
+.car-quote-btn {
+    background: #1769d2;
+
+    color: white;
+}
+
+
+/* WhatsApp */
+
+.car-whatsapp-btn {
+    background: #e9f9ef;
+
+    color: #159447;
+}
+
+
+/* Call */
+
+.car-call-btn {
+    background: #f3f4f6;
+
+    color: #333;
+}
+
+.car-footer {
+    width: 100%;
+    text-align: center;
+    padding: 25px 15px;
+    color: #777;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .car-benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .car-insurance-page {
+        padding: 30px 15px 40px;
+    }
+
+    .car-hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 25px 18px;
+    }
+
+    .car-hero h1 {
+        font-size: 25px;
+    }
+
+    .car-hero p {
+        font-size: 14px;
+    }
+
+    .car-benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .car-action-section {
+        gap: 8px;
+
+        padding: 15px;
+    }
+
+    .car-action-btn {
+        min-width: 110px;
+
+        padding: 9px 13px;
+
+        font-size: 12px;
+    }
+
+}
+/* =========================================
+BENEFIT INFO BUTTON
+========================================= */
+
+.car-info-btn {
+width: 25px;
+height: 25px;
+
+
+margin-left: auto;
+
+flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: none;
+background: transparent;
+
+color: #9aa6b5;
+
+cursor: pointer;
+
+padding: 0;
+
+border-radius: 50%;
+
+transition: all 0.2s ease;
+
+
+}
+
+.car-info-btn i {
+font-size: 15px;
+}
+
+.car-info-btn:hover {
+color: #1769d2;
+background: #edf4ff;
+
+
+transform: scale(1.1);
+
+
+}
+
+.car-info-btn:active {
+transform: scale(0.95);
+}
+
+/* =========================================
+INFO MODAL
+========================================= */
+
+.car-info-overlay {
+position: fixed;
+
+
+inset: 0;
+
+z-index: 9999;
+
+display: none;
+
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+
+background: rgba(15, 23, 42, 0.55);
+
+backdrop-filter: blur(3px);
+
+
+}
+
+.car-info-overlay.show {
+display: flex;
+}
+
+.car-info-modal {
+width: 100%;
+max-width: 460px;
+
+
+background: #ffffff;
+
+border-radius: 20px;
+
+padding: 25px;
+
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+
+animation: carInfoPopup 0.2s ease;
+
+
+}
+
+@keyframes carInfoPopup {
+
+
+from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+}
+
+.car-info-modal-header {
+display: flex;
+
+
+align-items: center;
+
+gap: 12px;
+
+margin-bottom: 15px;
+
+
+}
+
+.car-info-modal-icon {
+width: 42px;
+height: 42px;
+
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 12px;
+
+background: #edf4ff;
+
+color: #1769d2;
+
+flex-shrink: 0;
+
+
+}
+
+.car-info-modal-title {
+margin: 0;
+
+
+font-size: 20px;
+
+color: #172033;
+
+font-weight: 750;
+
+
+}
+
+.car-info-close {
+margin-left: auto;
+
+width: 32px;
+height: 32px;
+
+border: none;
+
+border-radius: 50%;
+
+background: #f3f4f6;
+
+color: #555;
+
+cursor: pointer;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-size: 15px;
+
+transition: all 0.2s ease;
+
+
+}
+
+.car-info-close:hover {
+background: #e8ebef;
+
+
+color: #111;
+
+transform: rotate(90deg);
+
+
+}
+
+.car-info-modal-text {
+margin: 0;
+
+
+color: #657084;
+
+font-size: 14px;
+
+line-height: 1.7;
+
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+
+.car-info-modal {
+    padding: 21px;
+
+    border-radius: 17px;
+}
+
+.car-info-modal-title {
+    font-size: 18px;
+}
+
+.car-info-modal-text {
+    font-size: 13px;
+}
+
+
+}
+
+</style>
+<!-- Car Insurance Page -->
+<section class="car-insurance-page">
+
+    <!-- Hero -->
+    <div class="car-hero">
+
+        <div class="car-hero-icon">
+            <i class="fa-solid fa-car"></i>
+        </div>
+
+        <div>
+            <span class="car-tag">CAR INSURANCE</span>
+
+            <h1>Protect Your Car. Drive With Confidence.</h1>
+
+            <p>
+                Comprehensive protection with coverage for accidents,
+                theft, natural disasters and more.
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Benefits -->
+    <div class="car-benefits-section">
+
+        <h2>What's Covered?</h2>
+
+     <div class="car-benefits-grid">
+
+
+<div class="car-benefit">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span>Comprehensive</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Comprehensive"
+            data-details="Provides coverage for damage to your insured car due to covered events such as accidents, theft, fire, natural disasters and other specified risks.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-users"></i>
+    <span>Third-Party Liability</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Third-Party Liability"
+            data-details="In case of an accident, in case someone meets with an accident or somebody’s property is damaged, this will cover the same under certain conditions. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-car-burst"></i>
+    <span>Accidental Damage Cover</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Accidental Damage Cover"
+            data-details="Damaged the car? No worries if the cause is one of the below: Accidents of external means Earthquake (Fire and shock damage) Natural calamities like, flood, typhoon, hurricane, storm, tempest, inundation, cyclone, Hailstorm, frost Terrorist Activity / Malicious Act Landslide/Rockslide.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+
+
+<div class="car-benefit">
+    <i class="fa-solid fa-cloud-showers-heavy"></i>
+    <span>Loss of Personal Belongings</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Loss of Personal Belongings"
+            data-details="With a support of police report, this will cover clothes or any item that can be worn, carried or used, audio/ video, CDs etc. Please refer to the policy wordings for the exact list and conditions of coverage. (Sum Insured : Rs.10000) T&C Apply.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-person"></i>
+    <span>Personal Accident Cover</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Personal Accident Cover"
+            data-details="Provides accident-related benefits for the insured person, subject to the policy coverage, limits, exclusions and applicable conditions.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-percent"></i>
+    <span>Zero Depreciation</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Zero Depreciation"
+            data-details="In Bumper to Bumper or Zero Depreciation cover (Depreciation Reimbursement), Insurer will pay you the amount of depreciation deducted on the value of parts replaced under own damage claim. This can be availed for first 2 claims only. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-gears"></i>
+    <span>Key Replacement</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Key Replacement"
+            data-details="We will reimburse for the cost of replacing your vehicle keys which are lost or stolen or broken into.(Sum Insured : Rs.25000 per occurrence limit 50% of SI) T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-road"></i>
+    <span>Roadside Assistance</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Roadside Assistance"
+            data-details="Flat tyre assistance, towing services, battery Jumpstart etc. are some of the services covered under this. Service can be provided on a best effort basis and excluding some special conditions. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-file-invoice"></i>
+    <span>Repair of Glass, Fibre, Plastic & Rubber Parts</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Repair of Glass, Fibre, Plastic & Rubber Parts"
+            data-details="A claim can be made for repair of glass/fibre/plastic/rubber than a replacement. Cost of painting of parts without any repair is not covered. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <span>Consumables expenses</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Consumables expenses"
+            data-details="This covers the cost of consumables required to be replaced/replenished arising from an accident to the insured car. This includes engine oil, gear box oil, etc. as mentioned in policy document.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+</div>
+
+
+    </div>
+
+
+    <!-- Action Buttons -->
+    <div class="car-action-section">
+
+        <!-- Get Plans -->
+        <a href="car-plans.html"
+           class="car-action-btn car-plans-btn">
+
+            <i class="fa-solid fa-file-shield"></i>
+            <span>Get Plans</span>
+
+        </a>
+
+
+        <!-- Get Quote -->
+        <a href="index.html#contact"
+   class="car-action-btn car-quote-btn">
+
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>Get Quote</span>
+
+        </a>
+
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/919148312175"
+           class="car-action-btn car-whatsapp-btn"
+           target="_blank"
+           rel="noopener">
+
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+
+        </a>
+
+
+        <!-- Call -->
+        <a href="tel:+919148312175"
+           class="car-action-btn car-call-btn">
+
+            <i class="fa-solid fa-phone"></i>
+            <span>Call</span>
+
+        </a>
+
+    </div>
+
+    <!-- =========================================
+         BENEFIT INFO MODAL
+    ========================================= -->
+
+    <div class="car-info-overlay" id="carInfoOverlay">
+
+        <div class="car-info-modal">
+
+            <div class="car-info-modal-header">
+
+                <div class="car-info-modal-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <h3 class="car-info-modal-title" id="carInfoTitle">
+                    Coverage
+                </h3>
+
+                <button type="button"
+                        class="car-info-close"
+                        id="carInfoClose"
+                        aria-label="Close">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <p class="car-info-modal-text" id="carInfoText">
+                Coverage details will appear here.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    
+    <script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const overlay = document.getElementById("carInfoOverlay");
+    const closeBtn = document.getElementById("carInfoClose");
+
+    const title = document.getElementById("carInfoTitle");
+    const text = document.getElementById("carInfoText");
+
+    const infoButtons = document.querySelectorAll(".car-info-btn");
+
+
+    /* Open popup */
+
+    infoButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            title.textContent = button.dataset.title;
+            text.textContent = button.dataset.details;
+
+            overlay.classList.add("show");
+
+        });
+
+    });
+
+
+    /* Close button */
+
+    closeBtn.addEventListener("click", function () {
+
+        overlay.classList.remove("show");
+
+    });
+
+
+    /* Click outside modal */
+
+    overlay.addEventListener("click", function (event) {
+
+        if (event.target === overlay) {
+
+            overlay.classList.remove("show");
+
+        }
+
+    });
+
+
+    /* ESC key */
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+
+            overlay.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+</script>
+
+ <footer class="car-footer">
+    © 2026 All Rights Reserved.
+</footer>
+</section>

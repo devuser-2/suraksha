@@ -334,6 +334,240 @@
     }
 
 }
+/* =========================================
+BENEFIT INFO BUTTON
+========================================= */
+
+.car-info-btn {
+width: 25px;
+height: 25px;
+
+
+margin-left: auto;
+
+flex-shrink: 0;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: none;
+background: transparent;
+
+color: #9aa6b5;
+
+cursor: pointer;
+
+padding: 0;
+
+border-radius: 50%;
+
+transition: all 0.2s ease;
+
+
+}
+
+.car-info-btn i {
+font-size: 15px;
+}
+
+.car-info-btn:hover {
+color: #1769d2;
+background: #edf4ff;
+
+
+transform: scale(1.1);
+
+
+}
+
+.car-info-btn:active {
+transform: scale(0.95);
+}
+
+/* =========================================
+INFO MODAL
+========================================= */
+
+.car-info-overlay {
+position: fixed;
+
+
+inset: 0;
+
+z-index: 9999;
+
+display: none;
+
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+
+background: rgba(15, 23, 42, 0.55);
+
+backdrop-filter: blur(3px);
+
+
+}
+
+.car-info-overlay.show {
+display: flex;
+}
+
+.car-info-modal {
+width: 100%;
+max-width: 460px;
+
+
+background: #ffffff;
+
+border-radius: 20px;
+
+padding: 25px;
+
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+
+animation: carInfoPopup 0.2s ease;
+
+
+}
+
+@keyframes carInfoPopup {
+
+
+from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.97);
+}
+
+to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+}
+
+.car-info-modal-header {
+display: flex;
+
+
+align-items: center;
+
+gap: 12px;
+
+margin-bottom: 15px;
+
+
+}
+
+.car-info-modal-icon {
+width: 42px;
+height: 42px;
+
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border-radius: 12px;
+
+background: #edf4ff;
+
+color: #1769d2;
+
+flex-shrink: 0;
+
+
+}
+
+.car-info-modal-title {
+margin: 0;
+
+
+font-size: 20px;
+
+color: #172033;
+
+font-weight: 750;
+
+
+}
+
+.car-info-close {
+margin-left: auto;
+
+width: 32px;
+height: 32px;
+
+border: none;
+
+border-radius: 50%;
+
+background: #f3f4f6;
+
+color: #555;
+
+cursor: pointer;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+font-size: 15px;
+
+transition: all 0.2s ease;
+
+
+}
+
+.car-info-close:hover {
+background: #e8ebef;
+
+
+color: #111;
+
+transform: rotate(90deg);
+
+
+}
+
+.car-info-modal-text {
+margin: 0;
+
+
+color: #657084;
+
+font-size: 14px;
+
+line-height: 1.7;
+
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+
+.car-info-modal {
+    padding: 21px;
+
+    border-radius: 17px;
+}
+
+.car-info-modal-title {
+    font-size: 18px;
+}
+
+.car-info-modal-text {
+    font-size: 13px;
+}
+
+
+}
+
 </style>
 <!-- Car Insurance Page -->
 <section class="car-insurance-page">
@@ -364,64 +598,123 @@
 
         <h2>What's Covered?</h2>
 
-        <div class="car-benefits-grid">
+     <div class="car-benefits-grid">
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-shield-halved"></i>
-                <span>Comprehensive</span>
-            </div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-users"></i>
-                <span>Third-Party Liability</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-shield-halved"></i>
+    <span>Comprehensive</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Comprehensive"
+            data-details="Provides coverage for damage to your insured car due to covered events such as accidents, theft, fire, natural disasters and other specified risks.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-car-burst"></i>
-                <span>Accident Damage</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-users"></i>
+    <span>Third-Party Liability</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Third-Party Liability"
+            data-details="In case of an accident, in case someone meets with an accident or somebody’s property is damaged, this will cover the same under certain conditions. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-key"></i>
-                <span>Theft Cover</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-car-burst"></i>
+    <span>Accidental Damage Cover</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Accidental Damage Cover"
+            data-details="Damaged the car? No worries if the cause is one of the below: Accidents of external means Earthquake (Fire and shock damage) Natural calamities like, flood, typhoon, hurricane, storm, tempest, inundation, cyclone, Hailstorm, frost Terrorist Activity / Malicious Act Landslide/Rockslide.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-cloud-showers-heavy"></i>
-                <span>Fire, Flood & Cyclone</span>
-            </div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-person"></i>
-                <span>Personal Accident Cover</span>
-            </div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-percent"></i>
-                <span>Zero Depreciation</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-cloud-showers-heavy"></i>
+    <span>Loss of Personal Belongings</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Loss of Personal Belongings"
+            data-details="With a support of police report, this will cover clothes or any item that can be worn, carried or used, audio/ video, CDs etc. Please refer to the policy wordings for the exact list and conditions of coverage. (Sum Insured : Rs.10000) T&C Apply.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-gears"></i>
-                <span>Engine Protection</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-person"></i>
+    <span>Personal Accident Cover</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Personal Accident Cover"
+            data-details="Provides accident-related benefits for the insured person, subject to the policy coverage, limits, exclusions and applicable conditions.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-road"></i>
-                <span>Roadside Assistance</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-percent"></i>
+    <span>Zero Depreciation</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Zero Depreciation"
+            data-details="In Bumper to Bumper or Zero Depreciation cover (Depreciation Reimbursement), Insurer will pay you the amount of depreciation deducted on the value of parts replaced under own damage claim. This can be availed for first 2 claims only. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-file-invoice"></i>
-                <span>Return to Invoice</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-gears"></i>
+    <span>Key Replacement</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Key Replacement"
+            data-details="We will reimburse for the cost of replacing your vehicle keys which are lost or stolen or broken into.(Sum Insured : Rs.25000 per occurrence limit 50% of SI) T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-            <div class="car-benefit">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-                <span>Consumables Cover</span>
-            </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-road"></i>
+    <span>Roadside Assistance</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Roadside Assistance"
+            data-details="Flat tyre assistance, towing services, battery Jumpstart etc. are some of the services covered under this. Service can be provided on a best effort basis and excluding some special conditions. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
 
-        </div>
+<div class="car-benefit">
+    <i class="fa-solid fa-file-invoice"></i>
+    <span>Repair of Glass, Fibre, Plastic & Rubber Parts</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Repair of Glass, Fibre, Plastic & Rubber Parts"
+            data-details="A claim can be made for repair of glass/fibre/plastic/rubber than a replacement. Cost of painting of parts without any repair is not covered. T&C Apply">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+<div class="car-benefit">
+    <i class="fa-solid fa-screwdriver-wrench"></i>
+    <span>Consumables expenses</span>
+    <button class="car-info-btn"
+            type="button"
+            data-title="Consumables expenses"
+            data-details="This covers the cost of consumables required to be replaced/replenished arising from an accident to the insured car. This includes engine oil, gear box oil, etc. as mentioned in policy document.">
+        <i class="fa-solid fa-circle-info"></i>
+    </button>
+</div>
+
+</div>
+
 
     </div>
 

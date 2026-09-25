@@ -741,7 +741,9 @@ nav .call-btn {
 
     border-radius: 999px;
 }
-
+   .insurance-section.commercial .insurance-toggle i {
+    color:darkblue;
+}
 
 /* =========================================================
    CONTACT
@@ -1789,7 +1791,5 @@ footer {
         box-sizing: border-box;
         margin: 0 auto;
     }
-    .insurance-section.commercial .insurance-toggle i {
-    color:darkblue;
-}
+ 
 }
